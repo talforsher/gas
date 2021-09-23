@@ -22,7 +22,7 @@ export async function getStaticProps(preview = true) {
   )
     .then((prices) => prices.json())
     .then((prices) =>
-      prices.data.stationsArr.sort((a, b) => () =>
+      prices.data.stationsArr.sort((a, b) =>
         a.fuel_prices.customer_price.price <
           b.fuel_prices.customer_price.price && -1
       )
