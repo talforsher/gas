@@ -16,8 +16,8 @@ export default function App({ prices }) {
           <button
             style={{
               background: `rgb(${
-                station.fuel_prices.customer_price.price * 10
-              },${255 - station.fuel_prices.customer_price.price * 10},0)`
+                station.fuel_prices.customer_price.price * 40
+              },${255 - station.fuel_prices.customer_price.price * 40},0)`
             }}
             className="list-group-item list-group-item-action"
             key={station.title}
