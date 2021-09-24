@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
 
 export default function App({ prices }) {
@@ -7,7 +8,7 @@ export default function App({ prices }) {
     <div className={styles.App}>
       <Head>
         <title>מלך הדלק | השוואת מחירי דלק</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירים</h3>
       <ul>
