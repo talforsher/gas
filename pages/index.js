@@ -11,11 +11,15 @@ export default function App({ prices }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירים</h3>
-      <ul>
+      <ul className="list-group list-group-flush">
         {prices.map((station) => (
-          <li key={station.title}>
+          <a
+            href="#"
+            className="list-group-item list-group-item-action"
+            key={station.title}
+          >
             {station.title} | {station.fuel_prices.customer_price.price}₪
-          </li>
+          </a>
         ))}
       </ul>
     </div>
