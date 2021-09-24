@@ -12,9 +12,13 @@ export default function App({ prices }) {
       </Head>
       <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירים</h3>
       <ul className="list-group list-group-flush">
-        {prices.map((station, index) => (
+        {prices.map((station) => (
           <button
-            style={{ background: `rgb(${index * 4},${255 - index * 4},0)` }}
+            style={{
+              background: `rgb(${
+                station.fuel_prices.customer_price.price * 10
+              },${255 - station.fuel_prices.customer_price.price * 10},0)`
+            }}
             className="list-group-item list-group-item-action"
             key={station.title}
           >
