@@ -14,7 +14,7 @@ export default function App({ prices }) {
       <ul className="list-group list-group-flush">
         {prices.map((station, index) => (
           <button
-            style={{ background: `rgb(${index * 2},${255 - index * 2},0)` }}
+            style={{ background: `rgb(${index * 4},${255 - index * 4},0)` }}
             className="list-group-item list-group-item-action"
             key={station.title}
           >
