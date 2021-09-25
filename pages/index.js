@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import "bootstrap/dist/css/bootstrap.css";
-import styles from "./styles.module.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import styles from "./styles.module.css";
 
 const toRad = (Value) => {
   return (Value * Math.PI) / 180;
@@ -14,8 +14,8 @@ const distance = (lat1, lon1, lat2, lon2) => {
   var R = 6371; // km
   var dLat = toRad(lat2 - lat1);
   var dLon = toRad(lon2 - lon1);
-  var lat1 = toRad(lat1);
-  var lat2 = toRad(lat2);
+  lat1 = toRad(lat1);
+  lat2 = toRad(lat2);
 
   var a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -43,12 +43,13 @@ function App({ prices, coords }) {
     columns.push({
       dataField: "distance",
       text: "מרחק",
-      sort: true
+      sort: true,
+      classes: styles.distance
     });
   const products = prices.map((station, i) => ({
     id: i,
     name: station.title,
-    price: station.fuel_prices.customer_price.price,
+    price: `${station.fuel_prices.customer_price.price} ₪`,
     distance: Math.round(
       distance(
         station.gps.lat,
@@ -66,7 +67,13 @@ function App({ prices, coords }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירים</h3>
-      <BootstrapTable keyField="id" data={products} columns={columns} />
+      <BootstrapTable
+        bootstrap4
+        hover
+        keyField="id"
+        data={products}
+        columns={columns}
+      />
       {/* <Table>
         <tbody>
           {prices.map((station) => (

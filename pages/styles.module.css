@@ -1,3 +1,11 @@
 .App {
   direction: rtl;
 }
+
+.distance {
+  background: red;
+}
+
+.distance::after {
+  content: " ק״מ ";
+}
