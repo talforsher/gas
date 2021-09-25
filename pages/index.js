@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import { Table } from "react-bootstrap";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import "bootstrap/dist/css/bootstrap.css";
-import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import styles from "./styles.module.css";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 
 const toRad = (Value) => {
   return (Value * Math.PI) / 180;
@@ -36,15 +35,16 @@ const columns = [
     dataField: "price",
     text: "מחיר",
     sort: true
-  },
-  {
-    dataField: "distance",
-    text: "מרחק",
-    sort: true
   }
 ];
 
 function App({ prices, coords }) {
+  coords &&
+    columns.push({
+      dataField: "distance",
+      text: "מרחק",
+      sort: true
+    });
   const products = prices.map((station, i) => ({
     id: i,
     name: station.title,
