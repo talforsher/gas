@@ -65,7 +65,6 @@ function App({ prices, coords }) {
         <title>מלך הדלק | השוואת מחירי דלק</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      lat: {coords?.latitude} | long: {coords?.longitude}
       <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירים</h3>
       <BootstrapTable keyField="id" data={products} columns={columns} />
       {/* <Table>
