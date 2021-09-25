@@ -66,7 +66,8 @@ function App({ prices, coords }) {
         <title>מלך הדלק | השוואת מחירי דלק</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירים</h3>
+      <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירי דלק בישראל</h3>
+      <h4>מחיר לליטר בנזין</h4>
       <BootstrapTable
         bootstrap4
         hover
