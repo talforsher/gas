@@ -2,6 +2,20 @@ import React from "react";
 import Head from "next/head";
 import styles from "./styles.module.css";
 
+if (!String.prototype.replaceAll) {
+  String.prototype.replaceAll = function (str, newStr) {
+    // If a regex pattern
+    if (
+      Object.prototype.toString.call(str).toLowerCase() === "[object regexp]"
+    ) {
+      return this.replace(str, newStr);
+    }
+
+    // If a string
+    return this.replace(new RegExp(str, "g"), newStr);
+  };
+}
+
 const toRad = (Value) => {
   return (Value * Math.PI) / 180;
 };
