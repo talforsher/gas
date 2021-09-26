@@ -38,7 +38,7 @@ const columns = [
   }
 ];
 
-function App({ prices, coords }) {
+function App({ prices, coords, time }) {
   coords &&
     columns.push({
       dataField: "distance",
@@ -67,7 +67,15 @@ function App({ prices, coords }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירי דלק בישראל</h3>
-      <h4>מחיר לליטר בנזין</h4>
+      <h4>
+        מחיר לליטר בנזין | עדכון אחרון{" "}
+        {new Date(time).toLocaleString("he-IL", {
+          weekday: "long",
+          hour12: false,
+          hour: "numeric",
+          minute: "2-digit"
+        })}
+      </h4>
       <BootstrapTable
         bootstrap4
         hover
@@ -122,7 +130,8 @@ export async function getStaticProps(preview = false) {
     props: {
       prices,
       time: new Date().getTime()
-    }
+    },
+    revalidate: 10000
   };
 }
 
