@@ -1,4 +1,3 @@
-// import { configureSitemap } from '@sergeymyssak/nextjs-sitemap';
 const { configureSitemap } = require("@sergeymyssak/nextjs-sitemap");
 
 async function fetchDynamicPaths() {
@@ -73,7 +72,7 @@ async function fetchDynamicPaths() {
     "ראשפינה",
     "ראשוןלציוןהמפרש",
     "מחנהעמוס"
-  ];
+  ].map((el) => encodeURI(el));
 }
 
 async function getDynamicPaths() {
@@ -84,7 +83,7 @@ async function getDynamicPaths() {
 
 getDynamicPaths().then((paths) => {
   const Sitemap = configureSitemap({
-    domains: [{ domain: "www.deleking.com", defaultLocale: "en" }],
+    domains: [{ domain: "www.deleking.com", defaultLocale: "he" }],
     include: paths,
     excludeIndex: true,
     pagesConfig: {

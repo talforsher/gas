@@ -1,437 +1,503 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-   <url>
-
-      <loc>http://www.deleking.co.il/</loc>
-
-      <lastmod>2005-01-01</lastmod>
-
-      <changefreq>daily</changefreq>
-
-      <priority>1</priority>
-
-   </url>
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://www.deleking.com/אילת/</loc>
+        <loc>https://www.deleking.com/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
-        <priority>0.5</priority>
+        <priority>1</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/חיפה-חלוציהתעשיה/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%99%D7%9C%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%99%D7%9C%D7%AA/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/רחובותמכוןוייצמן/</loc>
+        <loc>https://www.deleking.com/%D7%97%D7%99%D7%A4%D7%94-%D7%97%D7%9C%D7%95%D7%A6%D7%99%D7%94%D7%AA%D7%A2%D7%A9%D7%99%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%97%D7%99%D7%A4%D7%94-%D7%97%D7%9C%D7%95%D7%A6%D7%99%D7%94%D7%AA%D7%A2%D7%A9%D7%99%D7%94/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/צ'קפוסט/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA%D7%9E%D7%9B%D7%95%D7%9F%D7%95%D7%99%D7%99%D7%A6%D7%9E%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA%D7%9E%D7%9B%D7%95%D7%9F%D7%95%D7%99%D7%99%D7%A6%D7%9E%D7%9F/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/ניריפה/</loc>
+        <loc>https://www.deleking.com/%D7%A6'%D7%A7%D7%A4%D7%95%D7%A1%D7%98/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A6'%D7%A7%D7%A4%D7%95%D7%A1%D7%98/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/נתניההדרים/</loc>
+        <loc>https://www.deleking.com/%D7%A0%D7%99%D7%A8%D7%99%D7%A4%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A0%D7%99%D7%A8%D7%99%D7%A4%D7%94/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/אשקלוןדרום/</loc>
+        <loc>https://www.deleking.com/%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%94%D7%93%D7%A8%D7%99%D7%9D/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%94%D7%93%D7%A8%D7%99%D7%9D/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/כרמיאל/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F%D7%93%D7%A8%D7%95%D7%9D/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F%D7%93%D7%A8%D7%95%D7%9D/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/פלוגות/</loc>
+        <loc>https://www.deleking.com/%D7%9B%D7%A8%D7%9E%D7%99%D7%90%D7%9C/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%9B%D7%A8%D7%9E%D7%99%D7%90%D7%9C/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/פתחתקווהגיסין/</loc>
+        <loc>https://www.deleking.com/%D7%A4%D7%9C%D7%95%D7%92%D7%95%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A4%D7%9C%D7%95%D7%92%D7%95%D7%AA/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/בילוסנטר/</loc>
+        <loc>https://www.deleking.com/%D7%A4%D7%AA%D7%97%D7%AA%D7%A7%D7%95%D7%95%D7%94%D7%92%D7%99%D7%A1%D7%99%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A4%D7%AA%D7%97%D7%AA%D7%A7%D7%95%D7%95%D7%94%D7%92%D7%99%D7%A1%D7%99%D7%9F/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/תלחנן/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%99%D7%9C%D7%95%D7%A1%D7%A0%D7%98%D7%A8/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%99%D7%9C%D7%95%D7%A1%D7%A0%D7%98%D7%A8/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/בארטוביה/</loc>
+        <loc>https://www.deleking.com/%D7%AA%D7%9C%D7%97%D7%A0%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%AA%D7%9C%D7%97%D7%A0%D7%9F/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/טירתהכרמל/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%98%D7%95%D7%91%D7%99%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%98%D7%95%D7%91%D7%99%D7%94/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/ראשהעין/</loc>
+        <loc>https://www.deleking.com/%D7%98%D7%99%D7%A8%D7%AA%D7%94%D7%9B%D7%A8%D7%9E%D7%9C/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%98%D7%99%D7%A8%D7%AA%D7%94%D7%9B%D7%A8%D7%9E%D7%9C/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/שדרות/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%94%D7%A2%D7%99%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%94%D7%A2%D7%99%D7%9F/" />
     </url>
     <url>
-        <loc>https://www.deleking.com/טבריה/</loc>
+        <loc>https://www.deleking.com/%D7%A9%D7%93%D7%A8%D7%95%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A9%D7%93%D7%A8%D7%95%D7%AA/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/קרייתביאליק/</loc>
+        <loc>https://www.deleking.com/%D7%98%D7%91%D7%A8%D7%99%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%98%D7%91%D7%A8%D7%99%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/תלאביב-גןלונדון/</loc>
+        <loc>https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%91%D7%99%D7%90%D7%9C%D7%99%D7%A7/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%91%D7%99%D7%90%D7%9C%D7%99%D7%A7/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/תלאביב-מתחםהתחנה/</loc>
+        <loc>https://www.deleking.com/%D7%AA%D7%9C%D7%90%D7%91%D7%99%D7%91-%D7%92%D7%9F%D7%9C%D7%95%D7%A0%D7%93%D7%95%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%AA%D7%9C%D7%90%D7%91%D7%99%D7%91-%D7%92%D7%9F%D7%9C%D7%95%D7%A0%D7%93%D7%95%D7%9F/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/אריאל/</loc>
+        <loc>https://www.deleking.com/%D7%AA%D7%9C%D7%90%D7%91%D7%99%D7%91-%D7%9E%D7%AA%D7%97%D7%9D%D7%94%D7%AA%D7%97%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%AA%D7%9C%D7%90%D7%91%D7%99%D7%91-%D7%9E%D7%AA%D7%97%D7%9D%D7%94%D7%AA%D7%97%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/חולון/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%A8%D7%99%D7%90%D7%9C/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%A8%D7%99%D7%90%D7%9C/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ירושליםתלפיות/</loc>
+        <loc>https://www.deleking.com/%D7%97%D7%95%D7%9C%D7%95%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%97%D7%95%D7%9C%D7%95%D7%9F/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/כפרסבאמזרח/</loc>
+        <loc>https://www.deleking.com/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%D7%AA%D7%9C%D7%A4%D7%99%D7%95%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%D7%AA%D7%9C%D7%A4%D7%99%D7%95%D7%AA/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/עמקחפר/</loc>
+        <loc>https://www.deleking.com/%D7%9B%D7%A4%D7%A8%D7%A1%D7%91%D7%90%D7%9E%D7%96%D7%A8%D7%97/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%9B%D7%A4%D7%A8%D7%A1%D7%91%D7%90%D7%9E%D7%96%D7%A8%D7%97/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/אשקלוןסילבר/</loc>
+        <loc>https://www.deleking.com/%D7%A2%D7%9E%D7%A7%D7%97%D7%A4%D7%A8/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A2%D7%9E%D7%A7%D7%97%D7%A4%D7%A8/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/בארשבעעמקשרה/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F%D7%A1%D7%99%D7%9C%D7%91%D7%A8/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F%D7%A1%D7%99%D7%9C%D7%91%D7%A8/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ביתשאן/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%A9%D7%91%D7%A2%D7%A2%D7%9E%D7%A7%D7%A9%D7%A8%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%A9%D7%91%D7%A2%D7%A2%D7%9E%D7%A7%D7%A9%D7%A8%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/חדרה/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%99%D7%AA%D7%A9%D7%90%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%99%D7%AA%D7%A9%D7%90%D7%9F/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/חוףשמן/</loc>
+        <loc>https://www.deleking.com/%D7%97%D7%93%D7%A8%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%97%D7%93%D7%A8%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/מעלותתרשיחא/</loc>
+        <loc>https://www.deleking.com/%D7%97%D7%95%D7%A3%D7%A9%D7%9E%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%97%D7%95%D7%A3%D7%A9%D7%9E%D7%9F/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/נתיבות/</loc>
+        <loc>https://www.deleking.com/%D7%9E%D7%A2%D7%9C%D7%95%D7%AA%D7%AA%D7%A8%D7%A9%D7%99%D7%97%D7%90/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%9E%D7%A2%D7%9C%D7%95%D7%AA%D7%AA%D7%A8%D7%A9%D7%99%D7%97%D7%90/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/עפולה/</loc>
+        <loc>https://www.deleking.com/%D7%A0%D7%AA%D7%99%D7%91%D7%95%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A0%D7%AA%D7%99%D7%91%D7%95%D7%AA/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/פרדסחנה/</loc>
+        <loc>https://www.deleking.com/%D7%A2%D7%A4%D7%95%D7%9C%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A2%D7%A4%D7%95%D7%9C%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/צפת/</loc>
+        <loc>https://www.deleking.com/%D7%A4%D7%A8%D7%93%D7%A1%D7%97%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A4%D7%A8%D7%93%D7%A1%D7%97%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ראשוןלציון/</loc>
+        <loc>https://www.deleking.com/%D7%A6%D7%A4%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A6%D7%A4%D7%AA/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ראשוןלציוןמערב/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%95%D7%9F%D7%9C%D7%A6%D7%99%D7%95%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%95%D7%9F%D7%9C%D7%A6%D7%99%D7%95%D7%9F/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/באקהאלגרבייה/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%95%D7%9F%D7%9C%D7%A6%D7%99%D7%95%D7%9F%D7%9E%D7%A2%D7%A8%D7%91/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%95%D7%9F%D7%9C%D7%A6%D7%99%D7%95%D7%9F%D7%9E%D7%A2%D7%A8%D7%91/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/הסיביםגבעתשמואל/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%90%D7%A7%D7%94%D7%90%D7%9C%D7%92%D7%A8%D7%91%D7%99%D7%99%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%90%D7%A7%D7%94%D7%90%D7%9C%D7%92%D7%A8%D7%91%D7%99%D7%99%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/סלמה(נחלצלמון)/</loc>
+        <loc>https://www.deleking.com/%D7%94%D7%A1%D7%99%D7%91%D7%99%D7%9D%D7%92%D7%91%D7%A2%D7%AA%D7%A9%D7%9E%D7%95%D7%90%D7%9C/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%94%D7%A1%D7%99%D7%91%D7%99%D7%9D%D7%92%D7%91%D7%A2%D7%AA%D7%A9%D7%9E%D7%95%D7%90%D7%9C/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/אשדודג'מבו/</loc>
+        <loc>https://www.deleking.com/%D7%A1%D7%9C%D7%9E%D7%94(%D7%A0%D7%97%D7%9C%D7%A6%D7%9C%D7%9E%D7%95%D7%9F)/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A1%D7%9C%D7%9E%D7%94(%D7%A0%D7%97%D7%9C%D7%A6%D7%9C%D7%9E%D7%95%D7%9F)/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/בארשבע/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%A9%D7%93%D7%95%D7%93%D7%92'%D7%9E%D7%91%D7%95/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%A9%D7%93%D7%95%D7%93%D7%92'%D7%9E%D7%91%D7%95/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ביתהעמק/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%A9%D7%91%D7%A2/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%A9%D7%91%D7%A2/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/בתים/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%99%D7%AA%D7%94%D7%A2%D7%9E%D7%A7/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%99%D7%AA%D7%94%D7%A2%D7%9E%D7%A7/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/קרייתשמונה/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%AA%D7%99%D7%9D/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%AA%D7%99%D7%9D/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/רמלה/</loc>
+        <loc>https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%A9%D7%9E%D7%95%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%A9%D7%9E%D7%95%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/אופקים/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%9E%D7%9C%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%9E%D7%9C%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/אורעקיבא/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%95%D7%A4%D7%A7%D7%99%D7%9D/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%95%D7%A4%D7%A7%D7%99%D7%9D/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/אשדוד-עורףהנמל/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%95%D7%A8%D7%A2%D7%A7%D7%99%D7%91%D7%90/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%95%D7%A8%D7%A2%D7%A7%D7%99%D7%91%D7%90/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/בארותיצחק/</loc>
+        <loc>https://www.deleking.com/%D7%90%D7%A9%D7%93%D7%95%D7%93-%D7%A2%D7%95%D7%A8%D7%A3%D7%94%D7%A0%D7%9E%D7%9C/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%90%D7%A9%D7%93%D7%95%D7%93-%D7%A2%D7%95%D7%A8%D7%A3%D7%94%D7%A0%D7%9E%D7%9C/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ביתיהושע/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%95%D7%AA%D7%99%D7%A6%D7%97%D7%A7/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%90%D7%A8%D7%95%D7%AA%D7%99%D7%A6%D7%97%D7%A7/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/דימונה/</loc>
+        <loc>https://www.deleking.com/%D7%91%D7%99%D7%AA%D7%99%D7%94%D7%95%D7%A9%D7%A2/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%91%D7%99%D7%AA%D7%99%D7%94%D7%95%D7%A9%D7%A2/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/יבנה/</loc>
+        <loc>https://www.deleking.com/%D7%93%D7%99%D7%9E%D7%95%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%93%D7%99%D7%9E%D7%95%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ירושליםעטרות/</loc>
+        <loc>https://www.deleking.com/%D7%99%D7%91%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%99%D7%91%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/מגדלהעמק/</loc>
+        <loc>https://www.deleking.com/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%D7%A2%D7%98%D7%A8%D7%95%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%D7%A2%D7%98%D7%A8%D7%95%D7%AA/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/נוףהגליל(נצרתעלית)/</loc>
+        <loc>https://www.deleking.com/%D7%9E%D7%92%D7%93%D7%9C%D7%94%D7%A2%D7%9E%D7%A7/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%9E%D7%92%D7%93%D7%9C%D7%94%D7%A2%D7%9E%D7%A7/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/סאג'ור/</loc>
+        <loc>https://www.deleking.com/%D7%A0%D7%95%D7%A3%D7%94%D7%92%D7%9C%D7%99%D7%9C(%D7%A0%D7%A6%D7%A8%D7%AA%D7%A2%D7%9C%D7%99%D7%AA)/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A0%D7%95%D7%A3%D7%94%D7%92%D7%9C%D7%99%D7%9C(%D7%A0%D7%A6%D7%A8%D7%AA%D7%A2%D7%9C%D7%99%D7%AA)/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/עדהלום/</loc>
+        <loc>https://www.deleking.com/%D7%A1%D7%90%D7%92'%D7%95%D7%A8/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A1%D7%90%D7%92'%D7%95%D7%A8/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/עילבון/</loc>
+        <loc>https://www.deleking.com/%D7%A2%D7%93%D7%94%D7%9C%D7%95%D7%9D/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A2%D7%93%D7%94%D7%9C%D7%95%D7%9D/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ערד/</loc>
+        <loc>https://www.deleking.com/%D7%A2%D7%99%D7%9C%D7%91%D7%95%D7%9F/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A2%D7%99%D7%9C%D7%91%D7%95%D7%9F/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/קרייתאתא/</loc>
+        <loc>https://www.deleking.com/%D7%A2%D7%A8%D7%93/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A2%D7%A8%D7%93/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/קרייתגת/</loc>
+        <loc>https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%90%D7%AA%D7%90/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%90%D7%AA%D7%90/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/רהט-להבים/</loc>
+        <loc>https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%92%D7%AA/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A7%D7%A8%D7%99%D7%99%D7%AA%D7%92%D7%AA/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/רומתאלהייב/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%94%D7%98-%D7%9C%D7%94%D7%91%D7%99%D7%9D/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%94%D7%98-%D7%9C%D7%94%D7%91%D7%99%D7%9D/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/רמלהנשר/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%95%D7%9E%D7%AA%D7%90%D7%9C%D7%94%D7%99%D7%99%D7%91/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%95%D7%9E%D7%AA%D7%90%D7%9C%D7%94%D7%99%D7%99%D7%91/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/יהוד/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%9E%D7%9C%D7%94%D7%A0%D7%A9%D7%A8/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%9E%D7%9C%D7%94%D7%A0%D7%A9%D7%A8/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/כפרסבאשרונה/</loc>
+        <loc>https://www.deleking.com/%D7%99%D7%94%D7%95%D7%93/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%99%D7%94%D7%95%D7%93/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ראשפינה/</loc>
+        <loc>https://www.deleking.com/%D7%9B%D7%A4%D7%A8%D7%A1%D7%91%D7%90%D7%A9%D7%A8%D7%95%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%9B%D7%A4%D7%A8%D7%A1%D7%91%D7%90%D7%A9%D7%A8%D7%95%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/ראשוןלציוןהמפרש/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%A4%D7%99%D7%A0%D7%94/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%A4%D7%99%D7%A0%D7%94/" />
+    </url>
     <url>
-        <loc>https://www.deleking.com/מחנהעמוס/</loc>
+        <loc>https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%95%D7%9F%D7%9C%D7%A6%D7%99%D7%95%D7%9F%D7%94%D7%9E%D7%A4%D7%A8%D7%A9/</loc>
         <lastmod>2021-09-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
-   </url>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%A8%D7%90%D7%A9%D7%95%D7%9F%D7%9C%D7%A6%D7%99%D7%95%D7%9F%D7%94%D7%9E%D7%A4%D7%A8%D7%A9/" />
+    </url>
+    <url>
+        <loc>https://www.deleking.com/%D7%9E%D7%97%D7%A0%D7%94%D7%A2%D7%9E%D7%95%D7%A1/</loc>
+        <lastmod>2021-09-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+		<xhtml:link rel="alternate" hreflang="he" href="https://www.deleking.com/%D7%9E%D7%97%D7%A0%D7%94%D7%A2%D7%9E%D7%95%D7%A1/" />
+    </url>
 </urlset>
