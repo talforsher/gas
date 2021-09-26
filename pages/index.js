@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import "bootstrap/dist/css/bootstrap.css";
@@ -35,10 +36,16 @@ const columns = [
     dataField: "price",
     text: "מחיר",
     sort: true
+  },
+  {
+    dataField: "discount",
+    text: "חיסכון ל50 ליטר"
   }
 ];
 
 function App({ prices, coords, time }) {
+  const router = useRouter();
+
   coords &&
     columns.push({
       dataField: "distance",
@@ -46,10 +53,14 @@ function App({ prices, coords, time }) {
       sort: true,
       classes: styles.distance
     });
+
   const products = prices.map((station, i) => ({
     id: i,
     name: station.title,
     price: `${station.fuel_prices.customer_price.price} ₪`,
+    discount: `${Number(
+      station.fuel_prices.customer_price.discount.value * 50
+    ).toFixed(2)} ₪`,
     distance: Math.round(
       distance(
         station.gps.lat,
@@ -62,6 +73,7 @@ function App({ prices, coords, time }) {
 
   return (
     <div className={styles.App}>
+      {console.log(prices)}
       <Head>
         <title>מלך הדלק | השוואת מחירי דלק</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -82,6 +94,13 @@ function App({ prices, coords, time }) {
         keyField="id"
         data={products}
         columns={columns}
+        rowEvents={{
+          onClick: (e, row, id) =>
+            router.push({
+              pathname: `/${row.name.replaceAll(" ", "").replace("Ten", "")}`,
+              query: row
+            })
+        }}
       />
       {/* <Table>
         <tbody>
