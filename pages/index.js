@@ -120,7 +120,8 @@ export async function getStaticProps(preview = false) {
   );
   return {
     props: {
-      prices
+      prices,
+      time: new Date().getTime()
     }
   };
 }
