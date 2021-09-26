@@ -96,8 +96,7 @@ function App({ prices, coords, time }) {
         rowEvents={{
           onClick: (e, row, id) =>
             router.push({
-              pathname: `/${row.name.replaceAll(" ", "").replace("Ten", "")}`,
-              query: row
+              pathname: `/${row.name.replaceAll(" ", "").replace("Ten", "")}`
             })
         }}
       />
