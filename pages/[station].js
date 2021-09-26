@@ -12,9 +12,9 @@ const Page = ({ router: { query } }) => (
     </Head>
     <div className={styles.App}>
       <h1>{query.name}</h1>
-      <h2>{query.price}</h2>
-      <h3>{query.distance}</h3>
-      <h4>{query.discount}</h4>
+      <h2>{query.price} לליטר בנזין</h2>
+      <h3>{query.distance} ק״מ ממך</h3>
+      <h4>חיסכון של {query.discount} למכל מלא</h4>
     </div>
   </>
 );
