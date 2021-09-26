@@ -31,7 +31,9 @@ const Page = ({ currentStation, ...rest }) => (
     </Head>
     <div className={styles.App}>
       <h1>{currentStation.title}</h1>
-      <h2>{`${currentStation.fuel_prices.customer_price.price} ₪`}</h2>
+      <h2>
+        {`${currentStation.fuel_prices.customer_price.price} ₪`} לליטר בנזין
+      </h2>
       <h3>
         חיסכון של{" "}
         {`${Number(
