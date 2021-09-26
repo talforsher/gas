@@ -73,7 +73,6 @@ function App({ prices, coords, time }) {
 
   return (
     <div className={styles.App}>
-      {console.log(prices)}
       <Head>
         <title>מלך הדלק | השוואת מחירי דלק</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
