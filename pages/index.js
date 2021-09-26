@@ -139,11 +139,6 @@ export async function getStaticProps(preview = false) {
   )
     .then((res) => res.json())
     .then((res) => res.data.stationsArr);
-  prices.sort(
-    (a, b) =>
-      a.fuel_prices.customer_price.price < b.fuel_prices.customer_price.price &&
-      -1
-  );
   return {
     props: {
       prices,
