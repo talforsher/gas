@@ -1,8 +1,9 @@
-import React from "react";
-import Head from "next/head";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
+import { NextSeo } from "next-seo";
+import { AvatarGenerator } from "random-avatar-generator";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import styles from "./styles.module.css";
@@ -43,7 +44,7 @@ const columns = [
   }
 ];
 
-function App({ prices, coords, time }) {
+function App({ prices, coords, time, avatar }) {
   const router = useRouter();
 
   coords &&
@@ -73,11 +74,34 @@ function App({ prices, coords, time }) {
 
   return (
     <div className={styles.App}>
-      <Head>
-        <title>מלך הדלק | השוואת מחירי דלק</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <h1>תחנות הדלק הזולות בישראל</h1> <h3>השוואת מחירי דלק בישראל</h3>
+      <NextSeo
+        title="מלך הדלק 👑 השוואת מחירי דלק"
+        canonical="https://deleking.co.il/"
+        openGraph={{
+          url: "https://www.deleking.co.il",
+          title: "השוואת מחירי דלק הזול בישראל",
+          description:
+            "לקבלת המחיר הכי טוב לליטר בנזין, בתחנות הדלק הזולות הישראל. לחסוך בדלק ולצאת מלכות.",
+          images: [
+            {
+              url: avatar,
+              width: 264,
+              height: 280,
+              alt: "Og Image Alt",
+              type: "image/jpeg"
+            }
+          ],
+          site_name: "מלך הדלק"
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image"
+        }}
+      />
+      <h1>תחנות הדלק הזולות בישראל</h1> 
+      <img src={avatar} />
+      <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
         מחיר לליטר בנזין | עדכון אחרון{" "}
         {new Date(time).toLocaleString("he-IL", {
@@ -133,6 +157,7 @@ function App({ prices, coords, time }) {
 }
 
 export async function getStaticProps(preview = false) {
+  const generator = new AvatarGenerator();
   const prices = await fetch(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   )
@@ -141,7 +166,8 @@ export async function getStaticProps(preview = false) {
   return {
     props: {
       prices,
-      time: new Date().getTime()
+      time: new Date().getTime(),
+      avatar: generator.generateRandomAvatar()
     },
     revalidate: 10000
   };
