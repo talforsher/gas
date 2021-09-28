@@ -84,7 +84,7 @@ function App({ prices, coords, time, avatar }) {
             "לקבלת המחיר הכי טוב לליטר בנזין, בתחנות הדלק הזולות הישראל. לחסוך בדלק ולצאת מלכות.",
           images: [
             {
-              url: avatar,
+              url: "/crown",
               width: 264,
               height: 280,
               alt: "Og Image Alt",
