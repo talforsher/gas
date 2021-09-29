@@ -6,8 +6,7 @@
     "build": "next build",
     "start": "next start -p 3001",
     "post-update": "yarn upgrade --latest",
-    "generate-sitemap": "node sitemap-generator.js",
-    "postinstall": "npx patch-package"
+    "generate-sitemap": "node sitemap-generator.js"
   },
   "dependencies": {
     "@sergeymyssak/nextjs-sitemap": "^2.0.3",
