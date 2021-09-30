@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
@@ -73,6 +73,12 @@ function App({ prices, coords, time, avatar }) {
     )
   }));
 
+  const [lazy, setLazy] = useState(false);
+
+  useEffect(() => {
+    setLazy(true);
+  }, []);
+
   return (
     <div className={styles.App}>
       <Head>
@@ -104,7 +110,19 @@ function App({ prices, coords, time, avatar }) {
         }}
       />
       <h1>תחנות הדלק הזולות בישראל</h1> 
-      <img src={avatar} />
+      <div style={{ display: "grid" }}>
+        {lazy && (
+          <img
+            src="/crown.png"
+            style={{
+              width: "143px",
+              margin: "0 61px -93px",
+              zIndex: 10
+            }}
+          />
+        )}
+        <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
+      </div>
       <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
         מחיר לליטר בנזין | עדכון אחרון{" "}
