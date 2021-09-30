@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import { NextSeo } from "next-seo";
@@ -74,6 +75,9 @@ function App({ prices, coords, time, avatar }) {
 
   return (
     <div className={styles.App}>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NextSeo
         title="מלך הדלק 👑 השוואת מחירי דלק"
         canonical="https://deleking.co.il/"
