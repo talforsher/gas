@@ -110,9 +110,9 @@ function App({ prices, coords, time, avatar }) {
         }}
       />
       <h1>תחנות הדלק הזולות בישראל</h1> 
-      {avatar}
+      
       <div style={{ display: "grid" }}>
-        {lazy && (
+        
           <img
             src="/crown.png"
             style={{
@@ -121,8 +121,8 @@ function App({ prices, coords, time, avatar }) {
               zIndex: 10
             }}
           />
-        )}
-        // <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
+       <img src=`data:image/svg+xml;utf8,${avatar}`>
+       // <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
       </div>
       <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
