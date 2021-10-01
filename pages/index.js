@@ -110,6 +110,7 @@ function App({ prices, coords, time, avatar }) {
         }}
       />
       <h1>תחנות הדלק הזולות בישראל</h1> 
+      {avatar}
       <div style={{ display: "grid" }}>
         {lazy && (
           <img
@@ -121,7 +122,7 @@ function App({ prices, coords, time, avatar }) {
             }}
           />
         )}
-        <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
+        // <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
       </div>
       <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
@@ -185,11 +186,12 @@ export async function getStaticProps(preview = false) {
   )
     .then((res) => res.json())
     .then((res) => res.data.stationsArr);
+  const avatar = await ()=> fetch(generator.generateRandomAvatar())
   return {
     props: {
       prices,
       time: new Date().getTime(),
-      avatar: generator.generateRandomAvatar()
+      avatar: avatar
     },
     revalidate: 10000
   };
