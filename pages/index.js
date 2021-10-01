@@ -184,14 +184,15 @@ export async function getStaticProps(preview = false) {
   const prices = await fetch(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   )
-    .then((res) => res.json())
-    .then((res) => res.data.stationsArr);
-  const avatar = await fetch(generator.generateRandomAvatar());
+    .then(res => res.json())
+    .then(res => res.data.stationsArr);
+  const avatar = await fetch(generator.generateRandomAvatar())
+    .then(res => res.json())
   return {
     props: {
       prices,
       time: new Date().getTime(),
-      avatar: avatar
+      avatar
     },
     revalidate: 10000
   };
