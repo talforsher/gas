@@ -186,7 +186,7 @@ export async function getStaticProps(preview = false) {
   )
     .then((res) => res.json())
     .then((res) => res.data.stationsArr);
-  const avatar = await ()=> fetch(generator.generateRandomAvatar())
+  const avatar = await () => fetch(generator.generateRandomAvatar())
   return {
     props: {
       prices,
