@@ -121,7 +121,7 @@ function App({ prices, coords, time, avatar }) {
               zIndex: 10
             }}
           />
-       <img src=`data:image/svg+xml;utf8,${avatar}` />
+       <img src={`data:image/svg+xml;utf8,${avatar}` />
        // <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
       </div>
       <h3>השוואת מחירי דלק בישראל</h3>
