@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/Link";
+import Link from "next/link";
 import { AvatarGenerator } from "random-avatar-generator";
 import styles from "./styles.module.css";
 
