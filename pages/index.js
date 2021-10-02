@@ -73,10 +73,19 @@ function App({ prices, coords, time, avatar }) {
     )
   }));
 
-  const [lazy, setLazy] = useState(false);
+ 
 
   useEffect(() => {
-    setLazy(true);
+    const a = document.createElement("a");
+    const tr = document.createElement("tr");
+    
+    [...document.querySelectorAll("tr")].map(el=>{
+      a.href = el.querySelector("td").innerText.replaceAll(" ", "").replace("Ten", "");
+      a.display = "contents":
+      tr.innerHTML = "el.innerHTML";
+      a.appendChild(tr);
+      el.parentNode.replaceChild(a, el);
+        })
   }, []);
 
   return (
