@@ -1,6 +1,7 @@
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
-export default App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }) => {
   const router = useRouter();
 
   const handleRouteChange = (url) => {
@@ -18,3 +19,5 @@ export default App = ({ Component, pageProps }) => {
 
   return <Component {...pageProps} />;
 };
+
+export default App;
