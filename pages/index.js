@@ -121,7 +121,7 @@ function App({ prices, coords, time, avatar }) {
               zIndex: 10
             }}
           />
-       <span dangerouslySetInnerHTML={{__html: avatar}} />;
+       <span dangerouslySetInnerHTML={{__html: avatar}} />
       </div>
       <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
