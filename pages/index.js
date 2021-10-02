@@ -73,8 +73,6 @@ function App({ prices, coords, time, avatar }) {
     )
   }));
 
- 
-
   useEffect(() => {
     const a = document.createElement("a");
     const tr = document.createElement("tr");
@@ -85,7 +83,7 @@ function App({ prices, coords, time, avatar }) {
       tr.innerHTML = "el.innerHTML";
       a.appendChild(tr);
       el.parentNode.replaceChild(a, el);
-        })
+        });
   }, []);
 
   return (
