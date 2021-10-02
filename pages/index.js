@@ -106,6 +106,21 @@ function App({ prices, coords, time, avatar }) {
     <div className={styles.App}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RXGQZDCBCL"
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-RXGQZDCBCL', { page_path: window.location.pathname });
+            `
+          }}
+        />
       </Head>
       <NextSeo
         title="מלך הדלק 👑 השוואת מחירי דלק"
