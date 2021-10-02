@@ -5,8 +5,8 @@ import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import { NextSeo } from "next-seo";
 import { AvatarGenerator } from "random-avatar-generator";
+// import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import styles from "./styles.module.css";
 
 const toRad = (Value) => {
@@ -73,18 +73,34 @@ function App({ prices, coords, time, avatar }) {
     )
   }));
 
+  const Table = () => (
+    <BootstrapTable
+      bootstrap4
+      hover
+      keyField="id"
+      data={products}
+      columns={columns}
+      rowEvents={{
+        onClick: (e, row, id) =>
+          router.push({
+            pathname: `/${row.name.replaceAll(" ", "").replace("Ten", "")}`
+          })
+      }}
+    />
+  );
+
   useEffect(() => {
-    const a = document.createElement("a");
-    const tr = document.createElement("tr");
-    
-    [...document.querySelectorAll("tr")].map(el=>{
-      a.href = el.querySelector("td").innerText.replaceAll(" ", "").replace("Ten", "");
-      a.display = "contents";
-      tr.innerHTML = el.innerHTML;
-      a.appendChild(tr);
+    [...document.querySelectorAll("tbody > tr >:first-child")].map((el) => {
+      const a = document.createElement("a");
+      const td = document.createElement("td");
+      td.className = styles.td;
+      a.href = el.innerText.replaceAll(" ", "").replace("Ten", "");
+      a.className = styles.contents;
+      td.innerHTML = el.innerHTML;
+      a.appendChild(td);
       el.parentElement.replaceChild(a, el);
-        });
-  }, []);
+    });
+  }, [coords, Table]);
 
   return (
     <div className={styles.App}>
@@ -117,18 +133,16 @@ function App({ prices, coords, time, avatar }) {
         }}
       />
       <h1>תחנות הדלק הזולות בישראל</h1> 
-      
       <div style={{ display: "grid" }}>
-        
-          <img
-            src="/crown.png"
-            style={{
-              width: "143px",
-              margin: "0 61px -93px",
-              zIndex: 10
-            }}
-          />
-       <span dangerouslySetInnerHTML={{__html: avatar}} />
+        <img
+          src="/crown.png"
+          style={{
+            width: "143px",
+            margin: "0 61px -93px",
+            zIndex: 10
+          }}
+        />
+        <span dangerouslySetInnerHTML={{ __html: avatar }} />
       </div>
       <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
@@ -140,19 +154,7 @@ function App({ prices, coords, time, avatar }) {
           minute: "2-digit"
         })}
       </h4>
-      <BootstrapTable
-        bootstrap4
-        hover
-        keyField="id"
-        data={products}
-        columns={columns}
-        rowEvents={{
-          onClick: (e, row, id) =>
-            router.push({
-              pathname: `/${row.name.replaceAll(" ", "").replace("Ten", "")}`
-            })
-        }}
-      />
+      <Table />
       {/* <Table>
         <tbody>
           {prices.map((station) => (
@@ -190,10 +192,11 @@ export async function getStaticProps(preview = false) {
   const prices = await fetch(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   )
-    .then(res => res.json())
-    .then(res => res.data.stationsArr);
-  const avatar = await fetch(generator.generateRandomAvatar().split("topType=")[0] + "topType=NoHair")
-    .then(res => res.text())
+    .then((res) => res.json())
+    .then((res) => res.data.stationsArr);
+  const avatar = await fetch(
+    generator.generateRandomAvatar().split("topType=")[0] + "topType=NoHair"
+  ).then((res) => res.text());
   return {
     props: {
       prices,

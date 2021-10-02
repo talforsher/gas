@@ -2,10 +2,23 @@
   direction: rtl;
 }
 
-.distance {
-  background: red;
-}
-
 .distance::after {
   content: " ק״מ ";
+}
+
+.contents {
+  display: contents;
+  color: initial;
+  text-decoration: none;
+  border-color: rgb(222, 226, 230);
+}
+
+.contents:hover td {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+.td {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 1px;
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/Link";
+import { AvatarGenerator } from "random-avatar-generator";
 import styles from "./styles.module.css";
 
 if (!String.prototype.replaceAll) {
@@ -35,28 +37,41 @@ const distance = (lat1, lon1, lat2, lon2) => {
   return d;
 };
 
-const Page = ({ currentStation, ...rest }) => (
-  <>
+const Page = ({ currentStation, avatar, ...rest }) => (
+  <div className={styles.App}>
     <Head>
       <title>
         מלך הדלק | {currentStation.title} |{" "}
         {currentStation.fuel_prices.customer_price.price}
       </title>
     </Head>
-    <div className={styles.App}>
-      <h1>{currentStation.title}</h1>
-      <h2>
-        {`${currentStation.fuel_prices.customer_price.price} ₪`} לליטר בנזין
-      </h2>
-      <h3>
-        חיסכון של{" "}
-        {`${Number(
-          currentStation.fuel_prices.customer_price.discount.value * 50
-        ).toFixed(2)} ₪`}
-        למכל מלא
-      </h3>
-    </div>
-  </>
+    <h1>{currentStation.title}</h1>
+    <h2>
+      {`${currentStation.fuel_prices.customer_price.price} ₪`} לליטר בנזין
+    </h2>
+    <h3>
+      חיסכון של{" "}
+      {`${Number(
+        currentStation.fuel_prices.customer_price.discount.value * 50
+      ).toFixed(2)} ₪`}
+      למכל מלא
+    </h3>
+    <Link href="/">
+      <a>
+        <div style={{ display: "grid" }}>
+          <img
+            src="/crown.png"
+            style={{
+              width: "143px",
+              margin: "0 61px -93px",
+              zIndex: 10
+            }}
+          />
+          <span dangerouslySetInnerHTML={{ __html: avatar }} />
+        </div>
+      </a>
+    </Link>
+  </div>
 );
 
 export async function getStaticPaths() {
@@ -81,6 +96,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const generator = new AvatarGenerator();
   const stations = await fetch(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   )
@@ -90,9 +106,14 @@ export async function getStaticProps({ params }) {
   const currentStation = stations.find((e) => {
     return e.title.replaceAll(" ", "").replace("Ten", "") === params.station;
   });
+  const avatar = await fetch(
+    generator.generateRandomAvatar().split("topType=")[0] + "topType=NoHair"
+  ).then((res) => res.text());
   return {
     props: {
-      currentStation
+      currentStation,
+      time: new Date().getTime(),
+      avatar
     },
     revalidate: 10000
   };
