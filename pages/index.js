@@ -80,9 +80,9 @@ function App({ prices, coords, time, avatar }) {
     [...document.querySelectorAll("tr")].map(el=>{
       a.href = el.querySelector("td").innerText.replaceAll(" ", "").replace("Ten", "");
       a.display = "contents";
-      tr.innerHTML = "el.innerHTML";
+      tr.innerHTML = el.innerHTML;
       a.appendChild(tr);
-      el.parentNode.replaceChild(a, el);
+      el.parentElement.replaceChild(a, el);
         });
   }, []);
 
