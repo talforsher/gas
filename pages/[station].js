@@ -40,6 +40,22 @@ const distance = (lat1, lon1, lat2, lon2) => {
 const Page = ({ currentStation, avatar, ...rest }) => (
   <div className={styles.App}>
     <Head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-RXGQZDCBCL"
+      />
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-RXGQZDCBCL', { page_path: window.location.pathname });
+            `
+        }}
+      />
+      <link rel="icon" href="/favicon.ico" />
       <title>
         מלך הדלק | {currentStation.title} |{" "}
         {currentStation.fuel_prices.customer_price.price}
