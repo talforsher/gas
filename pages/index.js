@@ -122,8 +122,6 @@ function App({ prices, coords, time, avatar }) {
             }}
           />
        <span dangerouslySetInnerHTML={{__html: avatar}} />;
-       // <img src={`data:image/svg+xml;utf8,${encodeURI(avatar)}`} />
-       // <img src={avatar.split("topType=")[0] + "topType=NoHair"} />
       </div>
       <h3>השוואת מחירי דלק בישראל</h3>
       <h4>
