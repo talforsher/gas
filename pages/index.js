@@ -107,6 +107,11 @@ function App({ prices, coords, time, avatar }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <script
+          data-ad-client="ca-pub-9455771214890409"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-RXGQZDCBCL"
         />
