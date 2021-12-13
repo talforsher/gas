@@ -165,6 +165,7 @@ function App({ prices, coords, time, avatar, month }) {
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
         <div style={{ display: "grid" }}>
           <img
+            alt="אווטר של מלך הדלק"
             src="/crown.png"
             style={{
               width: "143px",
@@ -174,8 +175,7 @@ function App({ prices, coords, time, avatar, month }) {
           />
           <span dangerouslySetInnerHTML={{ __html: avatar }} />
         </div>
-        <h3>השוואת מחירי דלק בישראל</h3>
-        <h4>
+        <h2>
           מחיר לליטר בנזין | עדכון אחרון{" "}
           {new Date(time).toLocaleString("he-IL", {
             weekday: "long",
@@ -183,7 +183,8 @@ function App({ prices, coords, time, avatar, month }) {
             hour: "numeric",
             minute: "2-digit"
           })}
-        </h4>
+        </h2>
+        <h3>השוואת מחירי דלק בישראל</h3>
       </header>
       <Table />
       {/* <Table>

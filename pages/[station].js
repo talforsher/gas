@@ -107,6 +107,7 @@ const Page = ({ currentStation, avatar, month, wiki }) => {
         <a>
           <div style={{ display: "grid" }}>
             <img
+              alt="אווטר של מלך הדלק"
               src="/crown.png"
               style={{
                 width: "143px",
