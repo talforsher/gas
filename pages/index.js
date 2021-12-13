@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import { NextSeo } from "next-seo";
 import { AvatarGenerator } from "random-avatar-generator";
-// import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
 
@@ -45,7 +45,7 @@ const columns = [
   }
 ];
 
-function App({ prices, coords, time, avatar }) {
+function App({ prices, coords, time, avatar, month }) {
   const router = useRouter();
 
   coords &&
@@ -114,7 +114,7 @@ function App({ prices, coords, time, avatar }) {
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9455771214890409"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
         <script
           async
@@ -133,11 +133,11 @@ function App({ prices, coords, time, avatar }) {
         />
       </Head>
       <NextSeo
-        title="מלך הדלק 👑 השוואת מחירי דלק"
+        title={`מלך הדלק 👑 השוואת מחירי דלק ${month}`}
         canonical="https://deleking.co.il/"
         openGraph={{
           url: "https://www.deleking.co.il",
-          title: "השוואת מחירי דלק הזול בישראל",
+          title: `השוואת מחירי דלק ${month} הזול בישראל`,
           description:
             "לקבלת המחיר הכי טוב לליטר בנזין, בתחנות הדלק הזולות הישראל. לחסוך בדלק ולצאת מלכות.",
           images: [
@@ -149,7 +149,7 @@ function App({ prices, coords, time, avatar }) {
               type: "image/jpeg"
             }
           ],
-          site_name: "מלך הדלק"
+          site_name: `מלך הדלק ${month}`
         }}
         twitter={{
           handle: "@handle",
@@ -157,28 +157,30 @@ function App({ prices, coords, time, avatar }) {
           cardType: "summary_large_image"
         }}
       />
-      <h1>תחנות הדלק הזולות בישראל</h1> 
-      <div style={{ display: "grid" }}>
-        <img
-          src="/crown.png"
-          style={{
-            width: "143px",
-            margin: "0 61px -93px",
-            zIndex: 10
-          }}
-        />
-        <span dangerouslySetInnerHTML={{ __html: avatar }} />
-      </div>
-      <h3>השוואת מחירי דלק בישראל</h3>
-      <h4>
-        מחיר לליטר בנזין | עדכון אחרון{" "}
-        {new Date(time).toLocaleString("he-IL", {
-          weekday: "long",
-          hour12: false,
-          hour: "numeric",
-          minute: "2-digit"
-        })}
-      </h4>
+      <header>
+        <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
+        <div style={{ display: "grid" }}>
+          <img
+            src="/crown.png"
+            style={{
+              width: "143px",
+              margin: "0 61px -93px",
+              zIndex: 10
+            }}
+          />
+          <span dangerouslySetInnerHTML={{ __html: avatar }} />
+        </div>
+        <h3>השוואת מחירי דלק בישראל</h3>
+        <h4>
+          מחיר לליטר בנזין | עדכון אחרון{" "}
+          {new Date(time).toLocaleString("he-IL", {
+            weekday: "long",
+            hour12: false,
+            hour: "numeric",
+            minute: "2-digit"
+          })}
+        </h4>
+      </header>
       <Table />
       {/* <Table>
         <tbody>
@@ -226,7 +228,21 @@ export async function getStaticProps(preview = false) {
     props: {
       prices,
       time: new Date().getTime(),
-      avatar
+      avatar,
+      month: [
+        "ינואר",
+        "פברואר",
+        "מרץ",
+        "אפריל",
+        "מאי",
+        "יוני",
+        "יולי",
+        "אוגוסט",
+        "ספטמבר",
+        "אוקטובר",
+        "נובמבר",
+        "דצמבר"
+      ][new Date().getMonth()]
     },
     revalidate: 10000
   };

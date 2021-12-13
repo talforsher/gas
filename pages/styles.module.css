@@ -1,5 +1,6 @@
 .App {
   direction: rtl;
+  background: #eff2f5;
 }
 
 .distance::after {
@@ -17,8 +18,35 @@
   background: rgba(0, 0, 0, 0.075);
 }
 
+.App td {
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+.App header {
+  padding-right: 1rem;
+}
+
 .td {
   border-color: inherit;
   border-style: solid;
   border-width: 1px;
+  font-weight: 700;
+}
+
+.App article {
+  border: 1px solid;
+  width: fit-content;
+  padding: 2rem;
+  margin: 1rem 0rem;
+  box-shadow: 5px 10px;
+}
+
+.station {
+  padding-right: 1rem;
+}
+
+.paragraph {
+  max-width: 40rem;
+  padding-left: 10%;
 }
