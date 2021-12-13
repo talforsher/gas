@@ -78,8 +78,14 @@ const Page = ({ currentStation, avatar, month, wiki }) => {
       >
         ➡️
       </a>
-      <h1> בתחנת {currentStation.title}</h1>
-      <img src={wiki.image} />
+      <header className={styles.nameAndImage}>
+        <h1> בתחנת {currentStation.title}</h1>
+        <img
+          src={wiki.image}
+          alt={currentStation.title}
+          title={currentStation.title}
+        />
+      </header>
       <article>
         <h2>
           ליטר בנזין עולה רק{" "}
@@ -160,12 +166,18 @@ export async function getStaticProps({ params }) {
       "&prop=revisions&rvprop=content&format=json&prop=extracts|pageimages&exintro&explaintext&redirects=1&origin=*&pithumbsize=150"
   );
 
-  const wiki = await fetch(wikiURL)
-    .then((res) => res.json())
-    .then((res) => ({
-      text: Object.values(res.query.pages)[0].extract || null,
-      image: Object.values(res.query.pages)[0].thumbnail?.source || null
-    }));
+  const wikidata = await new Promise(function (resolve, reject) {
+    setTimeout(() => {
+      const request = fetch(wikiURL);
+      resolve(request);
+    }, 15000);
+  });
+
+  const json = await wikidata.json();
+  const wiki = {
+    text: Object.values(json.query.pages)[0].extract || null,
+    image: Object.values(json.query.pages)[0].thumbnail?.source || null
+  };
 
   return {
     props: {
