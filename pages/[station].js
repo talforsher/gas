@@ -38,7 +38,7 @@ const distance = (lat1, lon1, lat2, lon2) => {
   return d;
 };
 
-const Page = ({ currentStation, avatar, month, wiki }) => {
+const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
   return (
     <div className={`${styles.App} ${styles.station}`}>
       <Head>
@@ -95,8 +95,8 @@ const Page = ({ currentStation, avatar, month, wiki }) => {
           שזה חיסכון של
           {`${Number(
             currentStation.fuel_prices.customer_price.discount.value * 50
-          ).toFixed(2)} ₪`}
-          למכל מלא
+          ).toFixed(2)} ₪`}{" "}
+          למכל
         </h3>
       </article>
       <h4>
@@ -120,6 +120,13 @@ const Page = ({ currentStation, avatar, month, wiki }) => {
         </a>
       </Link>
       <p className={styles.paragraph}>{wiki.text}</p>
+      <footer>
+        בתחנת{" "}
+        <Link href={nextStation.title.replaceAll(" ", "").replace("Ten", "")}>
+          {nextStation.title}
+        </Link>{" "}
+        מחיר ליטר בנזין - {nextStation.fuel_prices.customer_price.price}
+      </footer>
     </div>
   );
 };
@@ -157,6 +164,7 @@ export async function getStaticProps({ params }) {
     return e.title.replaceAll(" ", "").replace("Ten", "") === params.station;
   });
 
+  const nextStation = stations[currentStation.id - 1] || stations[0];
   const avatar = await fetch(
     generator.generateRandomAvatar().split("topType=")[0] + "topType=NoHair"
   ).then((res) => res.text());
@@ -168,10 +176,13 @@ export async function getStaticProps({ params }) {
   );
 
   const wikidata = await new Promise(function (resolve, reject) {
-    setTimeout(() => {
-      const request = fetch(wikiURL);
-      resolve(request);
-    }, 15000);
+    setTimeout(
+      () => {
+        const request = fetch(wikiURL);
+        resolve(request);
+      },
+      process.env.NODE_ENV === "development" ? 0 : 15000
+    );
   });
 
   const json = await wikidata.json();
@@ -183,6 +194,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       currentStation,
+      nextStation,
       time: new Date().getTime(),
       avatar,
       wiki,

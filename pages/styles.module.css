@@ -37,7 +37,7 @@
   border-color: inherit;
   border-style: solid;
   border-width: 1px;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .App article {
@@ -48,8 +48,13 @@
   box-shadow: 5px 10px;
 }
 
+.App footer {
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
 .station {
   padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .paragraph {
