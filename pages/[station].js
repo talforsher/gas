@@ -80,11 +80,13 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
       </a>
       <header className={styles.nameAndImage}>
         <h1> בתחנת {currentStation.title}</h1>
-        <img
-          src={wiki.image}
-          alt={currentStation.title}
-          title={currentStation.title}
-        />
+        {wiki.image && (
+          <img
+            src={wiki.image}
+            alt={currentStation.title}
+            title={currentStation.title}
+          />
+        )}
       </header>
       <article>
         <h2>
@@ -92,7 +94,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
           {`${currentStation.fuel_prices.customer_price.price} ₪`}
         </h2>
         <h3>
-          שזה חיסכון של
+          שזה חיסכון של{" "}
           {`${Number(
             currentStation.fuel_prices.customer_price.discount.value * 50
           ).toFixed(2)} ₪`}{" "}
