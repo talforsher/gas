@@ -63,3 +63,16 @@
   max-width: 40rem;
   margin: auto;
 }
+
+.sortable {
+  background: red;
+}
+.App h1,
+.App h2 {
+  font-size: 1.5rem;
+}
+
+.App h3,
+.App h4 {
+  font-size: 1rem;
+}

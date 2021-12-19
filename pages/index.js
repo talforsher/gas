@@ -184,7 +184,7 @@ function App({ prices, coords, time, avatar, month }) {
             minute: "2-digit"
           })}
         </h2>
-        <h3>השוואת מחירי דלק בישראל</h3>
+        <h3>השוואת מחירי דלק בישראל | מיון לפי:</h3>
       </header>
       <Table />
       {/* <Table>

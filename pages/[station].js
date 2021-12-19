@@ -72,8 +72,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         style={{
           fontSize: "3rem",
           padding: "2rem, 0",
-          textDecoration: "unset",
-          float: "right"
+          textDecoration: "unset"
         }}
         href="/"
       >
