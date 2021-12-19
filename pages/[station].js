@@ -72,13 +72,14 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         style={{
           fontSize: "3rem",
           padding: "2rem, 0",
-          textDecoration: "unset"
+          textDecoration: "unset",
+          float: "right"
         }}
         href="/"
       >
         ➡️
       </a>
-      <header className={styles.nameAndImage}>
+      <header>
         <h1> בתחנת {currentStation.title}</h1>
         {wiki.image && (
           <img
@@ -113,7 +114,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
               src="/crown.png"
               style={{
                 width: "143px",
-                margin: "0 61px -93px",
+                margin: "0 auto -93px auto",
                 zIndex: 10
               }}
             />
@@ -168,7 +169,10 @@ export async function getStaticProps({ params }) {
 
   const nextStation = stations[currentStation.id - 1] || stations[0];
   const avatar = await fetch(
-    generator.generateRandomAvatar().split("topType=")[0] + "topType=NoHair"
+    generator
+      .generateRandomAvatar()
+      .split("topType=")[0]
+      .replace("Circle", "Transparent") + "topType=NoHair"
   ).then((res) => res.text());
 
   const wikiURL = encodeURI(

@@ -1,4 +1,5 @@
 .App {
+  padding-top: 3rem;
   direction: rtl;
   background: #00cce3;
   color: white;
@@ -34,12 +35,6 @@
   padding-right: 1rem;
 }
 
-.nameAndImage {
-  display: flex;
-  align-items: center;
-  gap: 4%;
-}
-
 .td {
   border-color: inherit;
   border-style: solid;
@@ -51,7 +46,7 @@
   border: 1px solid;
   width: fit-content;
   padding: 2rem;
-  margin: 1rem 0rem;
+  margin: 1rem auto;
   box-shadow: 5px 10px;
 }
 
@@ -66,5 +61,5 @@
 
 .paragraph {
   max-width: 40rem;
-  padding-left: 10%;
+  margin: auto;
 }
