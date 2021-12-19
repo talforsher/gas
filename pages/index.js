@@ -169,7 +169,7 @@ function App({ prices, coords, time, avatar, month }) {
             src="/crown.png"
             style={{
               width: "143px",
-              margin: "0 61px -93px",
+              margin: "0 auto -93px auto",
               zIndex: 10
             }}
           />

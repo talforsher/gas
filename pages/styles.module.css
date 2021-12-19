@@ -1,6 +1,8 @@
 .App {
   direction: rtl;
-  background: #eff2f5;
+  background: #00cce3;
+  color: white;
+  text-align: center;
 }
 
 .distance::after {
@@ -21,6 +23,11 @@
 .App td {
   vertical-align: middle;
   padding: 1rem;
+  background: white;
+}
+
+.App th {
+  color: white;
 }
 
 .App header {
