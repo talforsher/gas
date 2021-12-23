@@ -124,7 +124,11 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
       <p className={styles.paragraph}>{wiki.text}</p>
       <footer>
         בתחנת{" "}
-        <Link href={nextStation.title.replaceAll(" ", "").replace("Ten", "")}>
+        <Link
+          href={"/".concat(
+            nextStation.title.replaceAll(" ", "").replace("Ten", "")
+          )}
+        >
           {nextStation.title}
         </Link>{" "}
         מחיר ליטר בנזין - {nextStation.fuel_prices.customer_price.price}
