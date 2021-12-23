@@ -84,10 +84,10 @@
 }
 
 .navbar {
-  position: absolute;
-  width: 100%;
+  position: relative;
+  float: left;
+  padding-left: -moz-calc(-211px + 50%);
   padding-left: calc(-211px + 50%);
-  top: 7rem;
   left: 0vw;
   direction: ltr;
   z-index: 0;
@@ -111,6 +111,7 @@
   width: 100px;
   margin: 0 auto -93px auto;
   z-index: 10;
+  animation: 8s linear bounce infinite;
 }
 
 .king {
@@ -124,6 +125,7 @@
   width: fit-content;
   margin: auto;
   margin-bottom: -30px;
+  transform: translateX(calc(39px + -20vw));
 }
 
 @media only screen and (max-width: 650px) {
@@ -142,6 +144,7 @@
 
   .kingAndNav {
     margin-bottom: -50px;
+    transform: translateX(calc(30px + -21vw));
   }
 
   .navbar {
@@ -156,5 +159,26 @@
   .paragraph {
     max-width: 18rem;
     overflow-x: scroll;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0px);
+  }
+  20% {
+    transform: scale(1, 1) translateY(0px);
+  }
+  30% {
+    transform: scale(1.1, 0.9) translateY(12px);
+  }
+  40% {
+    transform: scale(0.9, 1.1) translateY(-2px);
+  }
+  50% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0px);
   }
 }

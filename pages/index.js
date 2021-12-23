@@ -164,6 +164,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
         }}
       />
       <header>
+        <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
         <div className={styles.navbar}>
           <ul className={cx("nav flex-column")}>
             {posts.map((title) => (
@@ -175,7 +176,6 @@ function App({ prices, coords, time, avatar, month, posts }) {
             ))}
           </ul>
         </div>
-        <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
         <div className={styles.kingAndNav}>
           <img
             alt="אווטר של מלך הדלק"
