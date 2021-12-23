@@ -68,6 +68,11 @@
   margin: auto;
 }
 
+.paragraph a {
+  color: #00606a;
+  text-decoration: none;
+}
+
 .App h1,
 .App h2 {
   font-size: 1.5rem;
@@ -79,7 +84,7 @@
 }
 
 .navbar {
-  position: fixed;
+  position: absolute;
   width: 100%;
   padding-left: calc(-211px + 50%);
   top: 7rem;
@@ -90,7 +95,7 @@
 
 .navbar ul {
   width: fit-content;
-  max-height: 14rem;
+  max-height: 17rem;
   column-gap: 17rem;
 }
 
@@ -145,5 +150,11 @@
 
   .navbar ul {
     column-gap: 9rem;
+    max-height: 14rem;
+  }
+
+  .paragraph {
+    max-width: 18rem;
+    overflow-x: scroll;
   }
 }
