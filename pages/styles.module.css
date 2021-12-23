@@ -33,6 +33,8 @@
 
 .App header {
   padding-right: 1rem;
+  padding-left: 1rem;
+  font-weight: bold;
 }
 
 .td {
@@ -75,4 +77,11 @@
 .App h3,
 .App h4 {
   font-size: 1rem;
+}
+
+.navLink {
+  color: white;
+  margin-left: 1rem;
+  box-shadow: 3px 3px;
+  border: 1px solid;
 }

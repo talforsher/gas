@@ -4,10 +4,12 @@ import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
 import { geolocated } from "react-geolocated";
 import { NextSeo } from "next-seo";
+import cx from "classnames";
 import { AvatarGenerator } from "random-avatar-generator";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const toRad = (Value) => {
   return (Value * Math.PI) / 180;
@@ -45,7 +47,7 @@ const columns = [
   }
 ];
 
-function App({ prices, coords, time, avatar, month }) {
+function App({ prices, coords, time, avatar, month, posts }) {
   const router = useRouter();
 
   coords &&
@@ -162,6 +164,14 @@ function App({ prices, coords, time, avatar, month }) {
         }}
       />
       <header>
+        <nav className="navbar justify-content-center navbar-light border">
+          <header className="navbar-brand">כתבות:</header>
+          {posts.map((title) => (
+            <Link key={title} href={`/article/${title}`}>
+              <a className={cx("nav-link", styles.navLink)}>{title}</a>
+            </Link>
+          ))}
+        </nav>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
         <div style={{ display: "grid" }}>
           <img
@@ -232,6 +242,13 @@ export async function getStaticProps(preview = false) {
       .split("topType=")[0]
       .replace("Circle", "Transparent") + "topType=NoHair"
   ).then((res) => res.text());
+
+  const posts = await fetch(
+    "https://hackathon.co.il/wp-json/wp/v2/posts?categories=4"
+  )
+    .then((res) => res.json())
+    .then((res) => res.map(({ title }) => title.rendered));
+
   return {
     props: {
       prices,
@@ -250,7 +267,8 @@ export async function getStaticProps(preview = false) {
         "אוקטובר",
         "נובמבר",
         "דצמבר"
-      ][new Date().getMonth()]
+      ][new Date().getMonth()],
+      posts
     },
     revalidate: 10000
   };
