@@ -105,13 +105,14 @@
   box-shadow: 3px 3px;
   border: 1px solid;
   cursor: pointer;
+  max-width: 80px;
 }
 
 .crown {
-  width: 100px;
-  margin: 0 auto -93px auto;
+  width: 105px;
+  margin: -6px auto -98px auto;
   z-index: 10;
-  animation: 8s linear bounce infinite;
+  animation: 8s linear bounce 3;
 }
 
 .king {
@@ -125,11 +126,12 @@
   width: fit-content;
   margin: auto;
   margin-bottom: -30px;
-  transform: translateX(calc(39px + -20vw));
+  transform: translateX(calc(57px + -23vw));
 }
 
 @media only screen and (max-width: 650px) {
   .crown {
+    margin: 0 auto -93px auto;
     width: 80px;
     z-index: 10;
   }
@@ -149,6 +151,7 @@
 
   .navbar {
     padding-left: calc(-150px + 50%);
+    font-size: 14px;
   }
 
   .navbar ul {
