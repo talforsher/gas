@@ -18,10 +18,12 @@
 }
 
 .contents:hover td {
-  background: rgba(0, 0, 0, 0.075);
+  background: #00cce3;
 }
 
 .App td {
+  position: relative;
+  z-index: 1;
   vertical-align: middle;
   padding: 1rem;
   background: white;
@@ -66,9 +68,6 @@
   margin: auto;
 }
 
-.sortable {
-  background: red;
-}
 .App h1,
 .App h2 {
   font-size: 1.5rem;
@@ -79,9 +78,72 @@
   font-size: 1rem;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding-left: calc(-211px + 50%);
+  top: 7rem;
+  left: 0vw;
+  direction: ltr;
+  z-index: 0;
+}
+
+.navbar ul {
+  width: fit-content;
+  max-height: 14rem;
+  column-gap: 17rem;
+}
+
 .navLink {
   color: white;
-  margin-left: 1rem;
+  margin-bottom: 1rem;
   box-shadow: 3px 3px;
   border: 1px solid;
+  cursor: pointer;
+}
+
+.crown {
+  width: 100px;
+  margin: 0 auto -93px auto;
+  z-index: 10;
+}
+
+.king {
+  width: fit-content;
+  margin: auto;
+  transform: scale(0.78);
+}
+
+.kingAndNav {
+  display: grid;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: -30px;
+}
+
+@media only screen and (max-width: 650px) {
+  .crown {
+    width: 80px;
+    z-index: 10;
+  }
+
+  .king {
+    pointer-events: none;
+    width: 0;
+    margin-right: -39px;
+    margin-top: -28px;
+    transform: scale(0.6);
+  }
+
+  .kingAndNav {
+    margin-bottom: -50px;
+  }
+
+  .navbar {
+    padding-left: calc(-150px + 50%);
+  }
+
+  .navbar ul {
+    column-gap: 9rem;
+  }
 }

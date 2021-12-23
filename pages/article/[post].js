@@ -105,11 +105,11 @@ export async function getStaticProps({ params }) {
   )
     .then((res) => res.json())
     .then((res) => res.find(({ title }) => title.rendered === params.post));
-  console.log(post);
+
   return {
     props: {
       avatar,
-      post: { title: post.title.rendered, content: post.excerpt.rendered }
+      post: { title: post.title.rendered, content: post.content.rendered }
     }
   };
 }

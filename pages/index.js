@@ -164,26 +164,28 @@ function App({ prices, coords, time, avatar, month, posts }) {
         }}
       />
       <header>
-        <nav className="navbar justify-content-center navbar-light border">
-          <header className="navbar-brand">כתבות:</header>
-          {posts.map((title) => (
-            <Link key={title} href={`/article/${title}`}>
-              <a className={cx("nav-link", styles.navLink)}>{title}</a>
-            </Link>
-          ))}
-        </nav>
+        <div className={styles.navbar}>
+          <ul className={cx("nav flex-column")}>
+            {posts.map((title) => (
+              <Link key={title} href={`/article/${title}`}>
+                <li className="nav-item">
+                  <a className={cx("nav-link", styles.navLink)}>{title}</a>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
-        <div style={{ display: "grid" }}>
+        <div className={styles.kingAndNav}>
           <img
             alt="אווטר של מלך הדלק"
             src="/crown.png"
-            style={{
-              width: "143px",
-              margin: "0 auto -93px auto",
-              zIndex: 10
-            }}
+            className={styles.crown}
           />
-          <span dangerouslySetInnerHTML={{ __html: avatar }} />
+          <span
+            className={styles.king}
+            dangerouslySetInnerHTML={{ __html: avatar }}
+          />
         </div>
         <h2>
           מחיר לליטר בנזין | עדכון אחרון{" "}
