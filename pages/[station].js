@@ -64,8 +64,8 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         />
         <link rel="icon" href="/favicon.ico" />
         <title>
-          מלך הדלק | {currentStation.title} ⛽️ |{" "}
-          {currentStation.fuel_prices.customer_price.price}
+          ⛽️ {currentStation.title.replace("Ten", "")}{" "}
+          {currentStation.fuel_prices.customer_price.price} ש״ח
         </title>
       </Head>
       <a
