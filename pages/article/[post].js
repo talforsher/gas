@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AvatarGenerator } from "random-avatar-generator";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "../styles.module.css";
+import { NextSeo } from "next-seo";
 
 const Page = ({ avatar, post }) => {
   return (
@@ -32,6 +33,32 @@ const Page = ({ avatar, post }) => {
         <link rel="icon" href="/favicon.ico" />
         <title>👑 מלך הדלק | {post.title}</title>
       </Head>
+      <NextSeo
+        title={`⛽️ ${post.title} | מלך הדלק`}
+        canonical="https://deleking.co.il/"
+        openGraph={{
+          url: `https://www.deleking.co.il/${post.title}`,
+          title: `⛽️ ${post.title} | מלך הדלק`,
+          description: `${"⛽️ "}חשוב לדעת. מחיר דלק נקבע ע״י משרד האנרגיה, אבל ${
+            post.title
+          } ועוד סיבות גורמים למחיר להשתנות. כמו כן, רשאיות תחנות הדלק לקבוע מחיר נמוך מהמחיר הנקוב.`,
+          images: [
+            {
+              url: "https://deleking.co.il/crown.png",
+              width: 264,
+              height: 280,
+              alt: "כתר של מלך הדלק",
+              type: "image/jpeg"
+            }
+          ],
+          site_name: `מלך הדלק`
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image"
+        }}
+      />
       <a
         style={{
           fontSize: "3rem",

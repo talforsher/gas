@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AvatarGenerator } from "random-avatar-generator";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
+import { NextSeo } from "next-seo";
 
 if (!String.prototype.replaceAll) {
   String.prototype.replaceAll = function (str, newStr) {
@@ -63,11 +64,45 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
           }}
         />
         <link rel="icon" href="/favicon.ico" />
-        <title>
-          ⛽️ {currentStation.title.replace("Ten", "")}{" "}
-          {currentStation.fuel_prices.customer_price.price} ש״ח
-        </title>
       </Head>
+      <NextSeo
+        title={`⛽️ ${currentStation.title.replace("Ten", "")} ${
+          currentStation.fuel_prices.customer_price.price
+        } ש״ח`}
+        canonical="https://deleking.co.il/"
+        openGraph={{
+          url: `https://www.deleking.co.il/${currentStation.title
+            .replaceAll(" ", "")
+            .replace("Ten", "")}`,
+          title: `⛽️ ${currentStation.title.replace("Ten", "")} ${
+            currentStation.fuel_prices.customer_price.price
+          } ש״ח`,
+          description: `ב${
+            "⛽️" + currentStation.title.replace("Ten", "")
+          } ליטר בנזין עולה רק ${
+            currentStation.fuel_prices.customer_price.price
+          } ₪ שזה חיסכון של ${Number(
+            currentStation.fuel_prices.customer_price.discount.value * 50
+          ).toFixed(
+            2
+          )}₪ למכל. הנתונים מעודכנים למדד חודש ${month} ומתעדכנים כל יום`,
+          images: [
+            {
+              url: "https://deleking.co.il/crown.png",
+              width: 264,
+              height: 280,
+              alt: "כתר של מלך הדלק",
+              type: "image/jpeg"
+            }
+          ],
+          site_name: `מלך הדלק ${month}`
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image"
+        }}
+      />
       <a
         style={{
           fontSize: "3rem",
