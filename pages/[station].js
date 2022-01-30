@@ -40,6 +40,7 @@ const distance = (lat1, lon1, lat2, lon2) => {
 };
 
 const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
+  console.log(currentStation);
   return (
     <div className={`${styles.App} ${styles.station}`}>
       <Head>
@@ -135,6 +136,28 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
           ).toFixed(2)} ₪`}{" "}
           למכל
         </h3>
+        <a
+          href={`https://www.waze.com/ul?ll=${currentStation.gps.lat}%2C${currentStation.gps.lng}&navigate=yes&zoom=17`}
+        >
+          <button
+            style={{
+              display: "inline-block",
+              padding: "0.35em 1.2em",
+              border: "0.1em solid #000",
+              margin: "0 0.3em 0.3em 0",
+              borderRadius: "0.12em",
+              boxSizing: "border-box",
+              textDecoration: "none",
+              fontFamily: "Roboto,sans-serif",
+              fontWeight: "300",
+              color: "#000",
+              textAlign: "center",
+              transition: "all 0.2s"
+            }}
+          >
+            לניווט לחצו כאן
+          </button>
+        </a>
       </article>
       <h4>
         המחיר המלא שממנו נגזרת ההנחה, הוא המחיר שמשרד האנרגיה הגדיר לחודש{" "}
@@ -255,7 +278,7 @@ export async function getStaticProps({ params }) {
         "אוקטובר",
         "נובמבר",
         "דצמבר"
-      ][new Date().getMonth()]
+      ][new Date(new Date().getTime() + 48 * 60 * 60 * 1000).getMonth()]
     },
     revalidate: 10000
   };

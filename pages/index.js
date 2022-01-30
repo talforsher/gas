@@ -269,7 +269,7 @@ export async function getStaticProps(preview = false) {
         "אוקטובר",
         "נובמבר",
         "דצמבר"
-      ][new Date().getMonth()],
+      ][new Date(new Date().getTime() + 48 * 60 * 60 * 1000).getMonth()],
       posts
     },
     revalidate: 10000
