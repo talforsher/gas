@@ -139,11 +139,11 @@ function App({ prices, coords, time, avatar, month, posts }) {
         />
       </Head>
       <NextSeo
-        title={`מלך הדלק 👑 השוואת מחירי דלק ${month}`}
+        title={`מלך הדלק 👑 השוואת מחירי דלק 2022`}
         canonical="https://deleking.co.il/"
         openGraph={{
           url: "https://www.deleking.co.il",
-          title: `השוואת מחירי דלק ${month} הזול בישראל`,
+          title: `השוואת מחירי דלק הזול בישראל`,
           description:
             "לקבלת המחיר הכי טוב לליטר בנזין, בתחנות הדלק הזולות הישראל. לחסוך בדלק ולצאת מלכות.",
           images: [
@@ -155,7 +155,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
               type: "image/jpeg"
             }
           ],
-          site_name: `מלך הדלק ${month}`
+          site_name: `מלך הדלק 2022`
         }}
         twitter={{
           handle: "@handle",
