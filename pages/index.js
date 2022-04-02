@@ -47,7 +47,7 @@ const columns = [
   }
 ];
 
-function App({ prices, coords, time, avatar, month, posts }) {
+function App({ prices, coords, time, avatar, month }) {
   const router = useRouter();
 
   coords &&
@@ -165,17 +165,6 @@ function App({ prices, coords, time, avatar, month, posts }) {
       />
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
-        <div className={styles.navbar}>
-          <ul className={cx("nav flex-column")}>
-            {posts.map((title) => (
-              <Link key={title} href={`/article/${title}`}>
-                <li className="nav-item">
-                  <a className={cx("nav-link", styles.navLink)}>{title}</a>
-                </li>
-              </Link>
-            ))}
-          </ul>
-        </div>
         <div className={styles.kingAndNav}>
           <img
             alt="אווטר של מלך הדלק"
@@ -245,9 +234,6 @@ export async function getStaticProps(preview = false) {
       .replace("Circle", "Transparent") + "topType=NoHair"
   ).then((res) => res.text());
 
-  const posts = await fetch(
-    "https://hackathon.co.il/wp-json/wp/v2/posts?categories=4"
-  )
     .then((res) => res.json())
     .then((res) => res.map(({ title }) => title.rendered));
 
@@ -270,7 +256,6 @@ export async function getStaticProps(preview = false) {
         "נובמבר",
         "דצמבר"
       ][new Date(new Date().getTime() + 48 * 60 * 60 * 1000).getMonth()],
-      posts
     },
     revalidate: 10000
   };
