@@ -234,9 +234,6 @@ export async function getStaticProps(preview = false) {
       .replace("Circle", "Transparent") + "topType=NoHair"
   ).then((res) => res.text());
 
-    .then((res) => res.json())
-    .then((res) => res.map(({ title }) => title.rendered));
-
   return {
     props: {
       prices,
@@ -255,7 +252,7 @@ export async function getStaticProps(preview = false) {
         "אוקטובר",
         "נובמבר",
         "דצמבר"
-      ][new Date(new Date().getTime() + 48 * 60 * 60 * 1000).getMonth()],
+      ][new Date(new Date().getTime() + 48 * 60 * 60 * 1000).getMonth()]
     },
     revalidate: 10000
   };
