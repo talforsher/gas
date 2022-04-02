@@ -126,7 +126,6 @@
   width: fit-content;
   margin: auto;
   margin-bottom: -30px;
-  transform: translateX(calc(57px + -23vw));
 }
 
 @media only screen and (max-width: 650px) {

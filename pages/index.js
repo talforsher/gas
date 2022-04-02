@@ -166,6 +166,7 @@ function App({ prices, coords, time, avatar, month }) {
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
         <div className={styles.kingAndNav}>
+          <div />
           <img
             alt="אווטר של מלך הדלק"
             src="/crown.png"
