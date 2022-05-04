@@ -234,7 +234,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
 
 export async function getStaticProps(preview = false) {
   const posts = await fetch(
-    "https://hackathon.co.il/wp-json/wp/v2/posts?categories=4"
+    "https://hackathon.co.il/wp-json/wp/v2/posts?author=4"
   )
     .then((res) => res.json())
     .then((res) => res.map(({ title }) => title.rendered));
