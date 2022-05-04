@@ -47,7 +47,7 @@ const columns = [
   }
 ];
 
-function App({ prices, coords, time, avatar, month }) {
+function App({ prices, coords, time, avatar, month, posts }) {
   const router = useRouter();
 
   coords &&
@@ -164,7 +164,18 @@ function App({ prices, coords, time, avatar, month }) {
         }}
       />
       <header>
-        <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1> 
+        <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
+        <div className={styles.navbar}>
+          <ul className={cx("nav")}>
+            {posts.map((title) => (
+              <Link key={title} href={`/article/${title}`}>
+                <li className="nav-item">
+                  <a className={cx("nav-link", styles.navLink)}>{title}</a>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
         <div className={styles.kingAndNav}>
           <div />
           <img
@@ -222,6 +233,11 @@ function App({ prices, coords, time, avatar, month }) {
 }
 
 export async function getStaticProps(preview = false) {
+  const posts = await fetch(
+    "https://hackathon.co.il/wp-json/wp/v2/posts?categories=4"
+  )
+    .then((res) => res.json())
+    .then((res) => res.map(({ title }) => title.rendered));
   const generator = new AvatarGenerator();
   const prices = await fetch(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
@@ -237,6 +253,7 @@ export async function getStaticProps(preview = false) {
 
   return {
     props: {
+      posts,
       prices,
       time: new Date().getTime(),
       avatar,

@@ -40,7 +40,6 @@ const distance = (lat1, lon1, lat2, lon2) => {
 };
 
 const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
-  console.log(currentStation);
   return (
     <div className={`${styles.App} ${styles.station}`}>
       <Head>
