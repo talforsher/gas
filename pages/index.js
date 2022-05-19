@@ -272,7 +272,7 @@ export async function getStaticProps(preview = false) {
         "דצמבר"
       ][new Date(new Date().getTime() + 48 * 60 * 60 * 1000).getMonth()]
     },
-    revalidate: 10000
+    revalidate: 5000
   };
 }
 
