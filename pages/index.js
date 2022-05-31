@@ -10,6 +10,7 @@ import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
 import Link from "next/link";
+import axios from "axios";
 
 const toRad = (Value) => {
   return (Value * Math.PI) / 180;
@@ -233,30 +234,28 @@ function App({ prices, coords, time, avatar, month, posts }) {
 }
 
 export async function getStaticProps(preview = false) {
-  const posts = await fetch(
+  const posts = await axios(
     "https://hackathon.co.il/wp-json/wp/v2/posts?author=4"
   )
-    .then((res) => res.json())
-    .then((res) => res.map(({ title }) => title.rendered));
+    .then((res) => res.data.map(({ title }) => title.rendered));
   const generator = new AvatarGenerator();
-  const prices = await fetch(
+  const prices = await axios(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   )
-    .then((res) => res.json())
-    .then((res) => res.data.stationsArr);
-  const avatar = await fetch(
+    .then((res) => res.data.data.stationsArr);
+  const avatar = await axios(
     generator
       .generateRandomAvatar()
       .split("topType=")[0]
       .replace("Circle", "Transparent") + "topType=NoHair"
-  ).then((res) => res.text());
+  )
 
   return {
     props: {
       posts,
       prices,
       time: new Date().getTime(),
-      avatar,
+      avatar: avatar.data,
       month: [
         "ינואר",
         "פברואר",
