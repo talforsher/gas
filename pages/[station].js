@@ -5,6 +5,7 @@ import { AvatarGenerator } from "random-avatar-generator";
 import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
 import { NextSeo } from "next-seo";
+import axios from "axios";
 
 if (!String.prototype.replaceAll) {
   String.prototype.replaceAll = function (str, newStr) {
@@ -196,13 +197,12 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const res = await fetch(
+  const stations = await axios(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   );
-  const stations = await res.json();
 
   // Get the paths we want to pre-render based on posts
-  const paths = stations.data.stationsArr.map((row) => {
+  const paths = stations.data.data.stationsArr.map((row) => {
     return {
       params: {
         station: row.title.replaceAll(" ", "").replace("Ten", "")
@@ -217,11 +217,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const generator = new AvatarGenerator();
-  const stations = await fetch(
+  const stations = await axios(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
   )
-    .then((res) => res.json())
-    .then((res) => res.data.stationsArr);
+    .then((res) => res.data.data.stationsArr);
 
   const currentStation = stations.find((e) => {
     return e.title.replaceAll(" ", "").replace("Ten", "") === params.station;
