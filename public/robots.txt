@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://deleking.com
+Host: https://deleking.co.il
 
 # Sitemaps
-Sitemap: https://deleking.com/sitemap.xml
+Sitemap: https://deleking.co.il/sitemap.xml

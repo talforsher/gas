@@ -83,7 +83,7 @@ async function getDynamicPaths() {
 
 getDynamicPaths().then((paths) => {
   const Sitemap = configureSitemap({
-    domains: [{ domain: "www.deleking.com", defaultLocale: "he" }],
+    domains: [{ domain: "www.deleking.co.il", defaultLocale: "he" }],
     include: paths,
     excludeIndex: true,
     pagesConfig: {
