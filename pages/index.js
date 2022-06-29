@@ -11,6 +11,101 @@ import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import axios from "axios";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'גרף מחירי דלק בישראל',
+    },
+  },
+};
+
+export const data = {
+  labels: ["ינואר 21", "פברואר 21", "מרץ 21", "אפריל 21", "מאי 21",
+    "יוני 21", "יולי 21", "אוגוסט 21", "ספטמבר 21", "אוקטובר 21", "נובמבר 21",
+    "דצמבר 21", "ינואר 22", "פברואר 22", "מרץ 22", "אפריל 22", "מאי 22", "יוני 22", "יולי 22"],
+  datasets: [
+    {
+      label: "בנזין 95",
+      data: [
+        5.51,
+        5.72,
+        5.99,
+        6.04,
+        6.06,
+        6.13,
+        6.31,
+        6.36,
+        6.31,
+        6.39,
+        6.62,
+        6.38,
+        6.37,
+        6.71,
+        7.05,
+        7.44,
+        6.94,
+        7.06,
+        7.72,
+        8.08
+      ],
+      borderColor: '#F9F871',
+      backgroundColor: '#F9F871',
+    },
+    {
+      label: "ביטקוין",
+      data: [
+        241,
+        323,
+        427,
+        417,
+        262,
+        253,
+        299,
+        342,
+        325,
+        448,
+        428,
+        342,
+        286,
+        321,
+        346,
+        299,
+        252,
+        166,
+        166
+      ].map((x) => (x/50).toFixed(2)),
+      borderColor: 'black',
+      backgroundColor: 'black',
+    }
+  ]
+};
 
 const toRad = (Value) => {
   return (Value * Math.PI) / 180;
@@ -166,6 +261,11 @@ function App({ prices, coords, time, avatar, month, posts }) {
       />
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
+
+        <article>
+          <Line options={options} data={data} />
+        </article>
+
         <div className={styles.navbar}>
           <ul className={cx("nav")}>
             {posts.map((title) => (
