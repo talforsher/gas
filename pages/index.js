@@ -100,7 +100,7 @@ export const data = {
         252,
         166,
         166
-      ].map((x) => (x/50).toFixed(2)),
+      ].map((x) => (x / 50).toFixed(2)),
       borderColor: 'black',
       backgroundColor: 'black',
     }
@@ -261,11 +261,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
       />
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
-
-        <article>
-          <Line options={options} data={data} />
-        </article>
-
+        <Line options={options} data={data} />
         <div className={styles.navbar}>
           <ul className={cx("nav")}>
             {posts.map((title) => (
