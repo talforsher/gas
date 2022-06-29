@@ -246,7 +246,7 @@ export async function getStaticProps({ params }) {
         const request = fetch(wikiURL);
         resolve(request);
       },
-      process.env.NODE_ENV === "development" ? 0 : 15000
+      process.env.NODE_ENV === "development" ? 0 : 14000
     );
   });
 
