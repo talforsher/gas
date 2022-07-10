@@ -44,26 +44,6 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
   return (
     <div className={`${styles.App} ${styles.station}`}>
       <Head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9455771214890409"
-          crossOrigin="anonymous"
-        ></script>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RXGQZDCBCL"
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-RXGQZDCBCL', { page_path: window.location.pathname });
-            `
-          }}
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NextSeo

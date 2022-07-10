@@ -204,35 +204,6 @@ function App({ prices, coords, time, avatar, month, posts }) {
     <div className={styles.App}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <script
-          defer
-          data-ad-client="ca-pub-9455771214890409"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <script
-          defer
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9455771214890409"
-          crossOrigin="anonymous"
-        ></script>
-        <script
-          defer
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RXGQZDCBCL"
-        />
-
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-RXGQZDCBCL', { page_path: window.location.pathname });
-            `
-          }}
-        />
       </Head>
       <NextSeo
         title={`מלך הדלק 👑 השוואת מחירי דלק 2022`}
