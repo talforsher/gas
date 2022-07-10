@@ -330,10 +330,11 @@ function App({ prices, coords, time, avatar, month, posts }) {
 }
 
 export async function getStaticProps(preview = false) {
-  const posts = await axios(
-    "https://hackathon.co.il/wp-json/wp/v2/posts?author=4"
-  )
-    .then((res) => res.data.map(({ title }) => title.rendered));
+  const posts = []; 
+  // await axios(
+  //   "https://hackathon.co.il/wp-json/wp/v2/posts?author=4"
+  // )
+  //   .then((res) => res.data.map(({ title }) => title.rendered));
   const generator = new AvatarGenerator();
   const prices = await axios(
     "https://10ten.co.il/website_api/website/1.0/generalDeclaration"
