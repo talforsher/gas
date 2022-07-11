@@ -47,7 +47,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NextSeo
-        title={`⛽️ ${currentStation.title.replace("Ten", "")} ${
+        title={`מחיר דלק ${currentStation.title.replace("Ten", "")} ${
           currentStation.fuel_prices.customer_price.price
         } ש״ח`}
         canonical="https://deleking.co.il/"
@@ -55,11 +55,11 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
           url: `https://www.deleking.co.il/${currentStation.title
             .replaceAll(" ", "")
             .replace("Ten", "")}`,
-          title: `⛽️ ${currentStation.title.replace("Ten", "")} ${
+          title: `מחיר דלק ${currentStation.title.replace("Ten", "")} ${
             currentStation.fuel_prices.customer_price.price
           } ש״ח`,
           description: `ב${
-            "⛽️" + currentStation.title.replace("Ten", "")
+            "מחיר דלק" + currentStation.title.replace("Ten", "")
           } ליטר בנזין עולה רק ${
             currentStation.fuel_prices.customer_price.price
           } ₪ שזה חיסכון של ${Number(
