@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import axios from "axios";
+import Fuse from 'fuse.js'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -126,35 +127,75 @@ const distance = (lat1, lon1, lat2, lon2) => {
   return d;
 };
 
-const columns = [
-  {
-    dataField: "name",
-    text: "תחנה",
-    sort: false
-  },
-  {
-    dataField: "price",
-    text: "מחיר",
-    sort: true
-  },
-  {
-    dataField: "discount",
-    text: "חיסכון ל50 ליטר"
-  }
-];
-
 function App({ prices, coords, time, avatar, month, posts }) {
   const router = useRouter();
+  const [filteredPrices, setFilteredPrices] = useState(prices);
+  const [filter, setFilter] = useState("");
+  const [columns, setColumns] = useState([
+    {
+      dataField: "name",
+      text: "תחנה",
+      sort: false
+    },
+    {
+      dataField: "price",
+      text: "מחיר",
+      sort: true
+    },
+    {
+      dataField: "discount",
+      text: "חיסכון ל50 ליטר"
+    }
+  ]);
 
-  coords &&
-    columns.push({
-      dataField: "distance",
-      text: "מרחק",
-      sort: true,
-      classes: styles.distance
-    });
+  useEffect(() => {
+    if (filter.length > 1) {
+      const fuse = new Fuse(prices, {
+        shouldSort: true,
+        threshold: 0.4,
+        location: 0,
+        distance: 100,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: ["title"]
+      });
+      const result = fuse.search(filter);
+      setFilteredPrices(result.map((x) => x.item));
+    }
+    else {
+      setFilteredPrices(prices);
+    }
+  }, [filter, prices]);
 
-  const products = prices.map((station, i) => ({
+
+  useEffect(() => {
+    if (coords) {
+      setColumns([
+        {
+          dataField: "name",
+          text: "תחנה",
+          sort: false
+        },
+        {
+          dataField: "price",
+          text: "מחיר",
+          sort: true
+        },
+        {
+          dataField: "discount",
+          text: "חיסכון ל50 ליטר"
+        },
+        {
+          dataField: "distance",
+          text: "מרחק",
+          sort: true,
+          classes: styles.distance
+        }
+      ]);
+    }
+  }, [coords]);
+
+  const products = filteredPrices.map((station, i) => ({
     id: i,
     name: station.title,
     price: `${station.fuel_prices.customer_price.price} ₪`,
@@ -266,6 +307,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
           })}
         </h2>
         <h3>השוואת מחירי דלק בישראל | מיון לפי:</h3>
+        <input placeholder="נסו 'חיפה'" type="text" onChange={(e) => setFilter(e.target.value)} />
       </header>
       <Table />
       {/* <Table>
@@ -301,7 +343,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
 }
 
 export async function getStaticProps(preview = false) {
-  const posts = []; 
+  const posts = [];
   // await axios(
   //   "https://hackathon.co.il/wp-json/wp/v2/posts?author=4"
   // )
