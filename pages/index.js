@@ -35,7 +35,15 @@ ChartJS.register(
 );
 
 export const options = {
-  responsive: true,
+  borderWidth: 1,
+  elements: {
+    point: {
+      radius: 1,
+      hitRadius: 15,
+      hoverRadius: 15,
+      hoverBorderWidth: 3,
+    }
+  },
   plugins: {
     legend: {
       position: 'top',
@@ -273,7 +281,9 @@ function App({ prices, coords, time, avatar, month, posts }) {
       />
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
+        <div style={{ maxWidth: "1000px" }}>
         <Line options={options} data={data} />
+        </div>
         <div className={styles.navbar}>
           <ul className={cx("nav")}>
             {posts.map((title) => (
