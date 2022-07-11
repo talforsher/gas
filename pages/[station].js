@@ -217,7 +217,7 @@ export async function getStaticProps({ params }) {
   const wikiURL = encodeURI(
     "https://he.wikipedia.org/w/api.php?action=query&titles=" +
       currentStation.title.replace("Ten ", "").split("-")[0] +
-      "&prop=revisions&rvprop=content&format=json&prop=extracts|pageimages&exintro&explaintext&redirects=1&origin=*&pithumbsize=150"
+      "&prop=revisions&rvprop=content&format=json&prop=extracts|pageimages&exintro&explaintext&redirects=1&origin=*&pithumbsize=350"
   );
 
   const wikidata = await new Promise(function (resolve, reject) {
