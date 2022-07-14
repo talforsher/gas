@@ -145,7 +145,7 @@ const distance = (lat1, lon1, lat2, lon2) => {
   return d;
 };
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ show, onClose, children, modalOpacity }) => {
 
   return (
     <div style={{
@@ -157,7 +157,9 @@ const Modal = ({ show, onClose, children }) => {
       width: '100%',
       height: '100%',
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      display: show ? 'flex' : 'none'
+      display: show ? 'flex' : 'none',
+      opacity: modalOpacity,
+      transition: 'opacity 0.3s ease-in-out',
     }}>
       <section style={{
         position: 'fixed',
@@ -195,7 +197,14 @@ function App({ prices, coords, time, avatar, month, posts }) {
   const [filteredPrices, setFilteredPrices] = useState(prices);
   const [filter, setFilter] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const onClose = () => setShowModal(false);
+  const [modalOpacity, setModalOpacity] = useState(0);
+  const onClose = () => {
+    setTimeout(() => {
+      setShowModal(false);
+    }, 500);
+    setModalOpacity(0);
+  }
+
   const [columns, setColumns] = useState([
     {
       dataField: "name",
@@ -265,6 +274,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowModal(true);
+      setModalOpacity(1);
       input.current.autoFocus = true;
       input.current.focus();
     }, 20_000);
@@ -347,7 +357,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
           cardType: "summary_large_image"
         }}
       />
-      <Modal show={showModal} onClose={onClose}>
+      <Modal show={showModal} onClose={onClose} modalOpacity={modalOpacity}>
         <div style={{
           display: 'flex',
           flexDirection: 'column',
@@ -356,8 +366,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
           height: '80%',
           color: '#000'
         }}>
-          <span>מה לא טוב באתר?</span>
-          <textarea ref={input} type="text" placeholder="כמה שיותר תלונות, יותר טוב להשתפרות האתר. כיתבו כאן!" style={{
+          <textarea ref={input} type="text" placeholder="איזה תחנה חסרה פה?" style={{
             width: '100%',
             textAlign: 'center',
             height: '100%',
@@ -381,13 +390,12 @@ function App({ prices, coords, time, avatar, month, posts }) {
               setShowModal(false);
               onClose();
             }
-            }>send</button>
+            }>בקשת הוספה</button>
           <a href="https://linkedin.com/in/talforsher" style={{
             width: '100%',
             height: '100%',
             border: 'none',
             outline: 'none',
-            fontSize: '1.5rem',
             padding: '0.5rem',
             margin: '0.5rem',
             textDecoration: 'none',
@@ -398,7 +406,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
         </div>
       </Modal>
       <header>
-        <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
+        <h1>תחנות הדלק הזולות בישראל<br />לחודש {month}</h1>
         <div style={{
           maxWidth: "1000px",
           backgroundColor: "#77b2ff",
