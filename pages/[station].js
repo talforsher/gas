@@ -50,7 +50,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         title={`מחיר דלק ${currentStation.title.replace("Ten", "")} ${
           currentStation.fuel_prices.customer_price.price
         } ש״ח`}
-        canonical={`https://www.deleking.co.il/${currentStation.title}`}
+        canonical={`https://www.deleking.co.il/${currentStation.title.replace("Ten", "")}`}
         openGraph={{
           url: `https://www.deleking.co.il/${currentStation.title
             .replaceAll(" ", "")
