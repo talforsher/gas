@@ -1,7 +1,7 @@
 .App {
   padding-top: 3rem;
   direction: rtl;
-  background: #00cce3;
+  background: #4896fa;
   color: white;
   text-align: center;
 }
@@ -18,7 +18,7 @@
 }
 
 .contents:hover td {
-  background: #00cce3;
+  background: #4896fa;
 }
 
 .App td {
@@ -70,7 +70,7 @@
 }
 
 .paragraph a {
-  color: #00606a;
+  color: #4896fa;
   text-decoration: none;
 }
 
