@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import BootstrapTable from "react-bootstrap-table-next";
@@ -145,10 +145,57 @@ const distance = (lat1, lon1, lat2, lon2) => {
   return d;
 };
 
+const Modal = ({ show, onClose, children }) => {
+
+  return (
+    <div style={{
+      textAlign: 'right',
+      position: 'fixed',
+      zIndex: '99',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: show ? 'flex' : 'none'
+    }}>
+      <section style={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: '#fff',
+        padding: '20px',
+        borderRadius: '10px',
+        width: '80%',
+        height: '80%',
+        WebkitOverflowScrolling: 'touch',
+        outline: 'none'
+      }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          marginBottom: '20px'
+        }}>
+          <div onClick={onClose} style={{
+            cursor: 'pointer',
+            color: '#000',
+            fontSize: '50px',
+            fontWeight: 'bold'
+          }}>×</div>
+        </div>
+        {children}
+      </section>
+    </div>
+  )
+}
+
 function App({ prices, coords, time, avatar, month, posts }) {
   const router = useRouter();
   const [filteredPrices, setFilteredPrices] = useState(prices);
   const [filter, setFilter] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const onClose = () => setShowModal(false);
   const [columns, setColumns] = useState([
     {
       dataField: "name",
@@ -212,6 +259,17 @@ function App({ prices, coords, time, avatar, month, posts }) {
       ]);
     }
   }, [coords]);
+
+  const input = useRef(null);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowModal(true);
+      input.current.autoFocus = true;
+      input.current.focus();
+    }, 200);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const products = filteredPrices.map((station, i) => ({
     id: i,
@@ -289,6 +347,56 @@ function App({ prices, coords, time, avatar, month, posts }) {
           cardType: "summary_large_image"
         }}
       />
+      <Modal show={showModal} onClose={onClose}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '80%',
+          color: '#000'
+        }}>
+          <span>מה לא טוב באתר?</span>
+          <textarea ref={input} type="text" placeholder="כמה שיותר תלונות, יותר טוב להשתפרות האתר. כיתבו כאן!" style={{
+            width: '100%',
+            textAlign: 'center',
+            height: '100%',
+            border: 'none',
+            outline: 'none',
+            fontSize: 'calc(1rem + 1vw)',
+            padding: '0.5rem',
+            margin: '0.5rem',
+            
+          }} />
+          <button style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            outline: 'none',
+            fontSize: '1.5rem',
+            padding: '0.5rem',
+            margin: '0.5rem'
+          }}
+            onClick={() => {
+              setShowModal(false);
+              onClose();
+            }
+            }>send</button>
+          <a href="https://linkedin.com/in/talforsher" style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            outline: 'none',
+            fontSize: '1.5rem',
+            padding: '0.5rem',
+            margin: '0.5rem',
+            textDecoration: 'none',
+            textAlign: 'center',
+            color: '#000'
+          }}>Developed by Tal Forsher</a>
+
+        </div>
+      </Modal>
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
         <div style={{
