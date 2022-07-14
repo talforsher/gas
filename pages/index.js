@@ -35,6 +35,16 @@ ChartJS.register(
 );
 
 export const options = {
+  Animation: true,
+  animation: {
+    tension: {
+      duration: 1000,
+      easing: 'linear',
+      from: 0.6,
+      to: 0.7,
+      loop: true
+    }
+  },
   borderWidth: 1,
   elements: {
     point: {
@@ -281,8 +291,13 @@ function App({ prices, coords, time, avatar, month, posts }) {
       />
       <header>
         <h1>תחנות הדלק הזולות בישראל לחודש {month}</h1>
-        <div style={{ maxWidth: "1000px" }}>
-        <Line options={options} data={data} />
+        <div style={{
+          maxWidth: "1000px",
+          backgroundColor: "#77b2ff",
+          borderRadius: "10px",
+          border: "1px solid #ffffff59",
+        }}>
+          <Line options={options} data={data} />
         </div>
         <div className={styles.navbar}>
           <ul className={cx("nav")}>
