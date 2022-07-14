@@ -317,7 +317,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
           })}
         </h2>
         <h3>השוואת מחירי דלק בישראל | מיון לפי:</h3>
-        <input placeholder="נסו 'חיפה'" type="text" onChange={(e) => setFilter(e.target.value)} />
+        <input placeholder="נסו 'חיפה או 'אילת''" type="text" onChange={(e) => setFilter(e.target.value)} />
       </header>
       <Table />
       {/* <Table>
