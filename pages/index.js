@@ -267,7 +267,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
       setShowModal(true);
       input.current.autoFocus = true;
       input.current.focus();
-    }, 200);
+    }, 20_000);
     return () => clearTimeout(timeout);
   }, []);
 
