@@ -50,7 +50,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         title={`מחיר דלק ${currentStation.title.replace("Ten", "")} ${
           currentStation.fuel_prices.customer_price.price
         } ש״ח`}
-        canonical="https://deleking.co.il/"
+        canonical={`https://www.deleking.co.il/${currentStation.title}`}
         openGraph={{
           url: `https://www.deleking.co.il/${currentStation.title
             .replaceAll(" ", "")
@@ -69,7 +69,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
           )}₪ למכל. הנתונים מעודכנים למדד חודש ${month} ומתעדכנים כל יום`,
           images: [
             {
-              url: "https://deleking.co.il/crown.png",
+              url: "https://www.deleking.co.il/crown.png",
               width: 264,
               height: 280,
               alt: "כתר של מלך הדלק",
