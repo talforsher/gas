@@ -23,6 +23,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { useDebounce } from "use-debounce";
 
 ChartJS.register(
   CategoryScale,
@@ -196,8 +197,10 @@ function App({ prices, coords, time, avatar, month, posts }) {
   const router = useRouter();
   const [filteredPrices, setFilteredPrices] = useState(prices);
   const [filter, setFilter] = useState("");
+  const [value] = useDebounce(filter, 500);
   const [showModal, setShowModal] = useState(false);
   const [modalOpacity, setModalOpacity] = useState(0);
+  const [beforeTextEntered, setBeforeTextEntered] = useState(true);
   const onClose = () => {
     setTimeout(() => {
       setShowModal(false);
@@ -223,7 +226,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
   ]);
 
   useEffect(() => {
-    if (filter.length > 1) {
+    if (value.length > 1) {
       const fuse = new Fuse(prices, {
         shouldSort: true,
         threshold: 0.4,
@@ -233,13 +236,13 @@ function App({ prices, coords, time, avatar, month, posts }) {
         minMatchCharLength: 1,
         keys: ["title"]
       });
-      const result = fuse.search(filter);
+      const result = fuse.search(value);
       setFilteredPrices(result.map((x) => x.item));
     }
     else {
       setFilteredPrices(prices);
     }
-  }, [filter, prices]);
+  }, [value, prices]);
 
 
   useEffect(() => {
@@ -407,6 +410,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
       </Modal>
       <header>
         <h1>תחנות הדלק הזולות בישראל<br />לחודש {month}</h1>
+        {beforeTextEntered && (
         <div style={{
           maxWidth: "1000px",
           backgroundColor: "#77b2ff",
@@ -415,6 +419,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
         }}>
           <Line options={options} data={data} />
         </div>
+        )}
         <div className={styles.navbar}>
           <ul className={cx("nav")}>
             {posts.map((title) => (
@@ -448,7 +453,10 @@ function App({ prices, coords, time, avatar, month, posts }) {
           })}
         </h2>
         <h3>השוואת מחירי דלק בישראל | מיון לפי:</h3>
-        <input placeholder="נסו 'חיפה או 'אילת''" type="text" onChange={(e) => setFilter(e.target.value)} />
+        <input placeholder="נסו 'חיפה או 'אילת''" type="text" onChange={(e) => {
+          setBeforeTextEntered(false)
+          setFilter(e.target.value)
+          }} />
       </header>
       <Table />
       {/* <Table>
