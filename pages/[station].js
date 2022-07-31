@@ -47,9 +47,7 @@ const Page = ({ currentStation, nextStation, avatar, month, wiki }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NextSeo
-        title={`מחיר דלק ${currentStation.title.replace("Ten", "")} ${
-          currentStation.fuel_prices.customer_price.price
-        } ש״ח`}
+        title={`מחיר דלק ${currentStation.title.replace("Ten", "")}`}
         canonical={`https://www.deleking.co.il/${currentStation.title.replaceAll(" ", "").replace("Ten", "")}`}
         openGraph={{
           url: `https://www.deleking.co.il/${currentStation.title

@@ -67,14 +67,13 @@ export const options = {
 };
 
 export const data = {
-  labels: ["ינואר 21", "פברואר 21", "מרץ 21", "אפריל 21", "מאי 21",
+  labels: ["פברואר 21", "מרץ 21", "אפריל 21", "מאי 21",
     "יוני 21", "יולי 21", "אוגוסט 21", "ספטמבר 21", "אוקטובר 21", "נובמבר 21",
-    "דצמבר 21", "ינואר 22", "פברואר 22", "מרץ 22", "אפריל 22", "מאי 22", "יוני 22", "יולי 22"],
+    "דצמבר 21", "ינואר 22", "פברואר 22", "מרץ 22", "אפריל 22", "מאי 22", "יוני 22", "יולי 22", "אוגוסט 22"],
   datasets: [
     {
       label: "בנזין 95",
       data: [
-        5.51,
         5.72,
         5.99,
         6.04,
@@ -93,7 +92,8 @@ export const data = {
         6.94,
         7.06,
         7.72,
-        8.08
+        8.08,
+        6.58
       ],
       borderColor: '#F9F871',
       backgroundColor: '#F9F871',
@@ -101,7 +101,6 @@ export const data = {
     {
       label: "ביטקוין",
       data: [
-        241,
         323,
         427,
         417,
@@ -119,7 +118,8 @@ export const data = {
         299,
         252,
         166,
-        166
+        166,
+        197
       ].map((x) => (x / 50).toFixed(2)),
       borderColor: 'black',
       backgroundColor: 'black',
@@ -453,7 +453,7 @@ function App({ prices, coords, time, avatar, month, posts }) {
           })}
         </h2>
         <h3>השוואת מחירי דלק בישראל | מיון לפי:</h3>
-        <input placeholder="נסו 'חיפה או 'אילת''" type="text" onChange={(e) => {
+        <input placeholder="נסו 'חיפה או 'אילת''" type="text" value={filter} onChange={(e) => {
           setBeforeTextEntered(false)
           setFilter(e.target.value)
           }} />
