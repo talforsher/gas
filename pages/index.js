@@ -74,7 +74,6 @@ export const data = {
     {
       label: "בנזין 95",
       data: [
-        5.72,
         5.99,
         6.04,
         6.06,
